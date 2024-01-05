@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+<div class="containerall">
+    <div class="abouttitlebox">
+        <h1 class="abouttitle">About TaleThreader</h1>
+    </div>
+
+    {% if user %}
+        <div class="remindercontainer">
+            <p>Welcome, {{ user["Username"] }}!</p>
+        </div>
+
+        <div class="sidecontainer">
+            <a class="btn btn about-logoutbtn" href="{{ url_for('logout') }}">Logout</a>
+        </div>
+
+    {% else %}
+
+        <div class="remindercontainer">
+            <p>Remember to Register and Login</p>
+        </div>
+
+        <div class="sidecontainer">
+            <a class="nav-link active about-loginbtn" href="{{ url_for('login') }}">Log In</a>
+            <a class="nav-link active about-registerbtn" href="{{ url_for('register') }}">Register</a>
+        </div>
+
+    {% endif %}
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->    
+
+    <div class="contentscontainer">
+        <h5 style="margin-top: 20px;">Our Mission</h5>
+            <p>At TaleThreader, we believe that everyone has a story to tell. Whether you're an experienced wordsmith or just starting your writing journey, 
+                we're here to be your companion in the world of storytelling. Our mission is to empower writers of all levels to craft engaging and immersive stories, 
+                breaking down the barriers that often hinder creativity.
+            </p>
+            <br>
+        <h5>What Sets Us Apart?</h5>
+            <h6>Interactive Story Writing</h6>
+                <p>TaleThreader goes beyond traditional writing platforms by offering an interactive storytelling experience. 
+                    Dive into a world where your imagination takes the lead, and your stories unfold based on your choices.</p>
+            <br>
+        <h5>Tailored Difficulty Levels</h5>
+            <h6>Interactive Story Writing</h6>
+                <p>We understand that every writer is unique, facing different challenges and seeking varied levels of assistance. 
+                    That's why we provide tailored difficulty levels for story writing assistance. Whether you're looking for a gentle nudge or a profound challenge, TaleThreader has the right level for you.</p>
+            <br>
+        <h5>Four Exciting Genres</h5>
+            <h6>Interactive Story Writing</h6>
+                <p>Explore the vast landscape of storytelling with our four distinct genres: Mystery, Fantasy, Horror, and Romance. 
+                    Each genre comes with its own set of prompts, themes, and challenges, ensuring a diverse and engaging writing experience.</p>
+                <br>
+        <h5>Join Us on the Adventure</h5>
+            <h6>Whether you're a seasoned writer or just discovering your narrative voice, TaleThreader is your creative companion. Embark on a storytelling adventure with us, where every tale is a thread woven into the rich tapestry of imagination.</h6>
+                <p>Let your story begin.</p>
+    </div>
+  <!-- </div> -->
+</div>
+{% endblock %}

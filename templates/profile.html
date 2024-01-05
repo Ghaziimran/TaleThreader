@@ -1,0 +1,18 @@
+
+{% extends "layout.html" %}
+
+{% block main %}
+
+  <div class="container">
+    <h1>Profile</h1>
+    {% if user %}
+      <p>Welcome, {{ user["Username"] }}!</p>>
+        <a class="nav-link active logoutbtn" href="{{ url_for('logout') }}">Logout</a>
+    {% else %}
+    <h1>About TaleThreader</h1>
+      <p>Remember to Log in if you want to see your profile.</p>
+    <br>
+      <p>Please log in to view your profile.</p>
+    {% endif %}
+  </div>
+{% endblock %}

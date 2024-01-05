@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+
+    <title>{% block title %}Romance{% endblock %}</title>
+
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+</head>
+
+<body>
+
+    <header class="romanceheader">
+        <button class="btn btn custom-buttonR" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">{% block subhead
+            %}Romance{% endblock %}</button>
+        <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+            aria-labelledby="offcanvasWithBothOptionsLabel" data-bs-autohide="false">
+            <div class="offcanvas-header text-bg-dark" tabindex="-1" id="myoffcanvasDarkNavbar"
+                aria-labelledby="offcanvasDarkNavbarLabel">
+                <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel"></h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body bg-dark text-white">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page"
+                            href="{{ url_for('index' ) }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page"
+                            href="{{ url_for('horror' ) }}">Horror</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page"
+                            href="{{ url_for('fantasy' ) }}">Fantasy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page"
+                            href="{{ url_for('mystery' ) }}">Mystery</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<h1 id="difficultyText" class="romancedifficulty">Select a difficulty:</h1>
+
+<div class="btn-group group2">
+    <button class="btn btn-success" onclick="changeDifficulty('Easy')">Easy</button>
+    <button class="btn btn-warning" onclick="changeDifficulty('Medium')">Medium</button>
+    <button class="btn btn-danger" onclick="changeDifficulty('Hard')">Hard</button>
+</div>
+
+<button class="btn btn storybtnR" id="showStoryButton" onclick="showStory()">Show Story</button>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<div class="story-container">
+    <div class="storybox" id="storybox1">
+        <h5 id="storyText">Click the button to see the story...</h5>
+    </div>
+    <div class="storybox storybox2 hidden" id="storybox2">
+        <h5 id="updatedStoryText">Fill in the blanks to see the story...</h5>
+    </div>
+ </div>
+
+ <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~EASY~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+  <div id="user-input" class="user-input">
+    <label for="momentType">Type of moment: </label>
+    <input type="text" id="momentType">
+    <br>
+    <label for="positiveFeeling">Positive Feeling: </label>
+    <input type="text" id="positiveFeeling">
+    <br>
+    <label for="negativeFeeling">Negative Feeling: </label>
+    <input type="text" id="negativeFeeling">
+    <br>
+    <label for="typeofAct">Type of Act: </label>
+    <input type="text" id="typeofAct">
+    <br>
+    <button class="btn btn-success" onclick="generateStory()">Submit</button>
+  </div>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~MEDIUM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+    <div class="mb-3 storytextarea" id="mediumUserInput">
+        <label for="StoryTextarea1" class="form-label">Chapter 2</label>
+        <textarea class="form-control" id="StoryTextarea1" rows="3"></textarea>
+
+        <div class="mb-3">
+            <label for="StoryTextarea2" class="form-label">Chapter 3</label>
+            <textarea class="form-control" id="StoryTextarea2" rows="3"></textarea>
+        </div>
+        
+        <div class="mb-3">
+            <label for="StoryTextarea3" class="form-label">Chapter 4</label>
+            <textarea class="form-control" id="StoryTextarea3" rows="3"></textarea>
+        </div>
+        
+        <button class="btn btn-success" onclick="submitStory()">Submit chapters</button>
+        
+    </div>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~HARD~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+    <div class="mb-3 storytextarea hidden hardstory" id="hardUserInput">
+        <label for="ChapterTextarea1" class="form-label">Chapter 2</label>
+        <textarea class="form-control hardform" id="ChapterTextarea1" rows="3"></textarea>
+    
+        <label for="ChapterTextarea2" class="form-label">Chapter 4</label>
+        <textarea class="form-control hardform" id="ChapterTextarea2" rows="3"></textarea>
+    
+        <label for="ChapterTextarea3" class="form-label">Chapter 6</label>
+        <textarea class="form-control hardform" id="ChapterTextarea3" rows="3"></textarea>
+    
+        <label for="ChapterTextarea4" class="form-label">Chapter 8</label>
+        <textarea class="form-control hardform" id="ChapterTextarea4" rows="3"></textarea>
+    
+        <label for="ChapterTextarea5" class="form-label">Chapter 9</label>
+        <textarea class="form-control hardform" id="ChapterTextarea5" rows="3"></textarea>
+    
+        <button class="btn btn-success" style="margin-top: 10px;" onclick="submitChapters()">Submit Chapters</button>
+    </div> 
+
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<script>
+var currentDifficulty = 'Easy';
+
+function changeDifficulty(difficulty) {
+
+    document.getElementById("StoryTextarea1").value = '';
+    document.getElementById("StoryTextarea2").value = '';
+    document.getElementById("StoryTextarea3").value = '';
+    document.getElementById("ChapterTextarea1").value = '';
+    document.getElementById("ChapterTextarea2").value = '';
+    document.getElementById("ChapterTextarea3").value = '';
+    document.getElementById("ChapterTextarea4").value = '';
+    document.getElementById("ChapterTextarea5").value = '';
+
+    document.getElementById('storybox2').innerHTML = '';
+
+    currentDifficulty = difficulty;
+    var storyTextElement = document.getElementById('storyText');
+    var showStoryButton = document.getElementById('showStoryButton');
+    var storybox1 = document.getElementById('storybox1');
+    var storybox2 = document.getElementById('storybox2');
+    var userInputDiv = document.getElementById('user-input');
+    var mediumUserInputDiv = document.getElementById('mediumUserInput');
+    var hardUserInputDiv = document.getElementById('hardUserInput'); 
+
+    storyTextElement.textContent = 'Click "Show Story" to see the ' + currentDifficulty +
+        ' story...';
+    showStoryButton.style.display = 'block';
+    showStoryButton.classList.remove('btn-easy', 'btn-medium', 'btn-hard');
+    showStoryButton.classList.add('btn-' + currentDifficulty.toLowerCase());
+
+    storybox1.style.marginLeft = '15px';
+    storybox1.style.maxWidth = '100vw';
+
+    storybox2.style.display = 'none';
+    userInputDiv.style.display = 'none';
+    mediumUserInputDiv.style.display = 'none';
+    hardUserInputDiv.style.display = 'none'; 
+}
+
+    if (currentDifficulty.toLowerCase() === 'easy') {
+        userInputDiv.style.display = 'block';
+    } else if (currentDifficulty.toLowerCase() === 'medium') {
+        mediumUserInputDiv.style.display = 'block';
+    } else if (currentDifficulty.toLowerCase() === 'hard') {
+        hardUserInputDiv.style.display = 'block';
+    }
+
+
+    function showStory() {
+    var storyTextElement = document.getElementById('storyText');
+    var showStoryButton = document.getElementById('showStoryButton');
+    var storybox1 = document.getElementById('storybox1');
+    var storybox2 = document.getElementById('storybox2');
+    var userInputDiv = document.getElementById('user-input');
+    var mediumUserInputDiv = document.getElementById('mediumUserInput');
+    var hardUserInputDiv = document.getElementById('hardUserInput');
+
+    document.getElementById("momentType").value = '';
+    document.getElementById("positiveFeeling").value = '';
+    document.getElementById("negativeFeeling").value = '';
+    document.getElementById("typeofAct").value = '';
+
+    if (currentDifficulty.toLowerCase() === 'medium') {
+        mediumUserInputDiv.style.display = 'block';
+    } else if (currentDifficulty.toLowerCase() === 'hard') {
+        hardUserInputDiv.style.display = 'block';
+    } else {
+        mediumUserInputDiv.style.display = 'none';
+        hardUserInputDiv.style.display = 'none';
+    }
+
+    fetch('/romance/GenreR/Rstory_' + currentDifficulty.toLowerCase() + '.html')
+        .then(response => response.text())
+        .then(data => {
+            storyTextElement.innerHTML = data;
+            showStoryButton.classList.add('btn-' + currentDifficulty.toLowerCase());
+
+            storybox1.style.marginLeft = '85px';
+            storybox1.style.maxWidth = '700px';
+
+            storybox2.style.display = 'block';
+
+            if (currentDifficulty.toLowerCase() === 'easy') {
+                userInputDiv.style.display = 'block';
+            } else {
+                userInputDiv.style.display = 'none';
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching story:', error);
+            storyTextElement.innerHTML = 'Error fetching the story.';
+        });
+}
+
+
+
+function changeText(difficulty) {
+    var difficultyTextElement = document.getElementById('difficultyText');
+    var userInputDiv = document.getElementById('user-input');
+    var mediumUserInputDiv = document.getElementById('mediumUserInput');
+
+    difficultyTextElement.textContent = 'You selected ' + difficulty + ' difficulty.';
+    difficultyTextElement.classList.add('centered-text');
+
+    userInputDiv.style.display = 'none';
+    mediumUserInputDiv.style.display = 'none';
+}
+
+function generateStory(userInput) {
+    const momentType = document.getElementById("momentType").value || '__________';
+    const positiveFeeling = document.getElementById("positiveFeeling").value || '__________';
+    const negativeFeeling = document.getElementById("negativeFeeling").value || '__________';
+    const typeofAct = document.getElementById("typeofAct").value || '__________';
+
+    const storyContainer = document.getElementById("storybox2");
+
+    const newStory = document.createElement("div");
+    newStory.classList.add("story");
+
+    newStory.innerHTML = `
+    ${currentDifficulty.toLowerCase() === 'easy' ?`
+    <h2 class="Easytitle">Whispers of Love in Willow Creek</h2>
+            <p class="main-paragraph">
+                <h6>Chapter 1: Whispers of Willow Creek</h6>
+                    In the quaint town of Willow Creek, where the cobblestone streets echoed with the whispers of love, Emma found herself captivated by a mysterious stranger. 
+                    His eyes, a deep shade of hazel, held secrets that begged to be unraveled. 
+                    One day, as the autumn leaves painted the town in hues of gold, Emma's path intertwined with his in the most unexpected way. 
+                    It was a ${momentType} moment, filled with a serendipity that neither of them could ignore.
+            </p>
+
+            <br>
+            <br>
+
+            <p class="main-paragraph">
+                <h6>Chapter 2: Shades of Vulnerability</h6> 
+                    Their connection blossomed like a delicate rose in the garden of emotions. As they spent more time together, sharing dreams and fears, 
+                    Emma discovered a vulnerability in him that spoke to the ${positiveFeeling} in her own heart. 
+                    Late-night conversations turned into stolen glances, and stolen glances into lingering touches. 
+                    Yet, there was a ${negativeFeeling} that loomed on the horizon, casting a shadow over their burgeoning romance.
+         </p>
+
+            <br>
+            <br>
+
+            <p class="main-paragraph">
+                <h6>Chapter 3: Dancing with Shadows</h6> 
+                    Despite the uncertainties that clouded their future, Emma and her mysterious companion navigated the complexities of love. 
+                    The town of Willow Creek became the backdrop to their story, witnessing the highs and lows of their journey. 
+                    In the end, it was a ${typeofAct} that would define the fate of their love story, leaving a lasting impression on the cobblestone streets that had witnessed the magic of their connection.
+        
+            </p>
+    ` : ''}
+
+    ${currentDifficulty.toLowerCase() === 'medium' ?`
+        <h2 class="MediumtitleR">Painting Love in Pastel Hues</h2>
+        <h5>
+            <h6>Chapter 1: A Chance Encounter</h6>
+                Amelia, a small-town artist with dreams as vast as the open sky, found herself at a crossroads when she crossed paths with Oliver, 
+                a charismatic stranger whose laughter echoed like a melody through the quiet streets. Their chance encounter at the local coffee shop felt like destiny unfolding. 
+                As they exchanged stories and shared laughter, an invisible thread wove itself between them. It was a connection that transcended the ordinary, leaving them both eager to explore what lay beyond the horizon.
+            <br>
+            <br>
+            <h6>Chapter 2: The Art of Intimacy</h6>
+                As Amelia and Oliver delved deeper into each other's lives, their connection blossomed into a canvas painted with the hues of vulnerability and trust. 
+                Late nights were spent revealing hidden layers, dreams, and fears, creating a masterpiece of intimacy. However, just as the painting began to take shape, 
+                an unexpected revelation left them standing on the precipice of uncertainty. ${userInput}.
+    
+            <br>
+            <br>
+            <h6>Chapter 3: Whispers of the Heart</h6>
+                In the quaint town where secrets were whispered among the rustling leaves, Amelia and Oliver found solace in the whispers of their own hearts. 
+                A shared love for the simple pleasures of life deepened their bond. Amid moonlit strolls and stolen kisses, a promise unfolded, leaving them both yearning for more. 
+                ${userInput}.
+            <br>
+            <br>
+
+            <h6>Chapter 4: Love's Reflection</h6>
+                As their love story continued to evolve, Amelia and Oliver faced the mirror of reality, reflecting the complexities that love often brings. 
+                The small gestures and grand declarations intertwined to create a tapestry of emotions. Yet, there was a revelation that cast a shadow over their happiness, 
+                challenging them to confront the insecurities that lurked in the corners of their hearts. It was a pivotal moment, 
+                a juncture where they had to decide if their love was strong enough to weather the storms that life had prepared for them.
+
+            <br>
+            <br>
+            <h6>Chapter 5: Embracing Tomorrow</h6>
+                Amelia and Oliver stood at the crossroads once again, facing the unknown with a mixture of fear and hope. 
+                The journey they had embarked upon together had transformed them, and as they looked toward the future, 
+                a blank canvas awaited. The final stroke, the conclusion of their love story, was yet to be painted. 
+                ${userInput}.
+            <br>
+            <br>
+        </h5>
+    ` : ''}
+    `;
+
+    storyContainer.innerHTML = '';
+    storyContainer.appendChild(newStory);
+    storyContainer.classList.remove("hidden");
+}
+
+function submitStory() {
+    const userInput1 = document.getElementById("StoryTextarea1").value || '__________';
+    const userInput2 = document.getElementById("StoryTextarea2").value || '__________';
+    const userInput3 = document.getElementById("StoryTextarea3").value || '__________';
+
+    const storyContainer = document.getElementById("storybox2");
+
+    const newStory = document.createElement("div");
+    newStory.classList.add("story");
+
+    newStory.innerHTML = `
+    <h2 class="Mediumtitle">Painting Love in Pastel Hues</h2>
+        <h5>
+            <h6>Chapter 1: A Chance Encounter</h6>
+                Amelia, a small-town artist with dreams as vast as the open sky, found herself at a crossroads when she crossed paths with Oliver, 
+                a charismatic stranger whose laughter echoed like a melody through the quiet streets. Their chance encounter at the local coffee shop felt like destiny unfolding. 
+                As they exchanged stories and shared laughter, an invisible thread wove itself between them. It was a connection that transcended the ordinary, leaving them both eager to explore what lay beyond the horizon.
+            <br>
+            <br>
+            <h6>Chapter 2: The Art of Intimacy</h6>
+                As Amelia and Oliver delved deeper into each other's lives, their connection blossomed into a canvas painted with the hues of vulnerability and trust. 
+                Late nights were spent revealing hidden layers, dreams, and fears, creating a masterpiece of intimacy. However, just as the painting began to take shape, 
+                an unexpected revelation left them standing on the precipice of uncertainty. ${userInput1}.
+    
+            <br>
+            <br>
+            <h6>Chapter 3: Whispers of the Heart</h6>
+                In the quaint town where secrets were whispered among the rustling leaves, Amelia and Oliver found solace in the whispers of their own hearts. 
+                A shared love for the simple pleasures of life deepened their bond. Amid moonlit strolls and stolen kisses, a promise unfolded, leaving them both yearning for more. 
+                ${userInput2}.
+            <br>
+            <br>
+
+            <h6>Chapter 4: Love's Reflection</h6>
+                As their love story continued to evolve, Amelia and Oliver faced the mirror of reality, reflecting the complexities that love often brings. 
+                The small gestures and grand declarations intertwined to create a tapestry of emotions. Yet, there was a revelation that cast a shadow over their happiness, 
+                challenging them to confront the insecurities that lurked in the corners of their hearts. It was a pivotal moment, 
+                a juncture where they had to decide if their love was strong enough to weather the storms that life had prepared for them.
+
+            <br>
+            <br>
+            <h6>Chapter 5: Embracing Tomorrow</h6>
+                Amelia and Oliver stood at the crossroads once again, facing the unknown with a mixture of fear and hope. 
+                The journey they had embarked upon together had transformed them, and as they looked toward the future, 
+                a blank canvas awaited. The final stroke, the conclusion of their love story, was yet to be painted. 
+                ${userInput3}.
+            <br>
+            <br>
+        </h5>
+    `;
+
+    storyContainer.innerHTML = '';
+    storyContainer.appendChild(newStory);
+
+    storyContainer.classList.remove("hidden");
+}
+
+function submitChapters() {
+    const chapter1 = document.getElementById("ChapterTextarea1").value || '__________';
+    const chapter2 = document.getElementById("ChapterTextarea2").value || '__________';
+    const chapter3 = document.getElementById("ChapterTextarea3").value || '__________';
+    const chapter4 = document.getElementById("ChapterTextarea4").value || '__________';
+    const chapter5 = document.getElementById("ChapterTextarea5").value || '__________';
+
+    const storyContainer = document.getElementById("storybox2");
+
+    const newStory = document.createElement("div");
+    newStory.classList.add("story");
+
+    newStory.innerHTML = `
+    ${currentDifficulty.toLowerCase() === 'hard' ?`
+        <h2 class="Hardtitle">Eclipsed Resonance</h2>
+        <p class="main-paragraph">
+            <h6>Chapter 1 - The Last Sunset</h6> 
+                As the sun dipped below the horizon for the final time, casting a kaleidoscope of warm hues across the desolate landscape, 
+                Emily stood alone on the edge of what used to be a bustling city. The air was thick with an impending sense of finality, yet amidst the ruins, she felt a strange calmness. 
+                It was then that she noticed a silhouette approaching, a lone figure navigating the remnants of a world now lost.
+            <br>
+            <br>
+        </p>
+
+        <p class="main-paragraph">
+            <h6>Chapter 2 - Remnants of Tomorrow</h6> 
+                Amidst the debris of a once-thriving world, Emily found solace in the whispers of the past. ${chapter1}.
+            <br>
+            <br>
+        </p>
+
+        <p class="main-paragraph"> 
+            <h6>Chapter 3 - Echoes of the Past</h6> 
+                His name was Alex, a survivor with eyes that mirrored the sadness of a thousand sunsets. 
+                They exchanged no words, understanding that spoken language was futile in a world that no longer had a future. 
+                Instead, they explored the deserted streets, finding solace in the echoes of laughter that lingered in the ghostly breeze.
+            <br>
+            <br>
+        </p>
+
+        <p class="main-paragraph">
+            <h6>Chapter 4 - Veil of Shadows</h6> 
+                ${chapter2}.
+                As the shadows deepened, they found themselves on the precipice of an unknown tomorrow, their intertwined hands forging a connection strong enough to defy the encroaching darkness.
+            <br>
+            <br>
+        </p>
+            
+        <p class="main-paragraph">
+            <h6>Chapter 5 - Whispers in the Wind</h6> 
+                In the abandoned library, they stumbled upon a collection of love letters and novels, a testament to the love that once thrived amidst chaos. 
+                Emily and Alex spent days reading aloud the tales of passion and heartbreak, finding comfort in each other's company. Love, it seemed, could survive even in the ruins of a dying world.
+            <br>
+            <br>
+        </p>
+
+        <p class="main-paragraph">
+            <h6>Chapter 6 - Symphony of Silence</h6> 
+                In the heart of the abandoned city, a grand piano stood like a silent sentinel, its ivory keys longing for the touch of fingers to awaken a symphony that echoed through the desolation.
+                ${chapter3}
+            <br>
+            <br>
+        </p>
+
+        <p class="main-paragraph">
+            <h6>Chapter 7 - The Dance of Embers</h6> 
+                One evening, beneath a sky painted with the last remnants of daylight, they discovered a gramophone in an old jazz club. As the haunting melodies filled the air, 
+                Emily and Alex found themselves dancing in the midst of a world that had all but crumbled. It was a dance of both sorrow and hope, an acknowledgment that even in the face of the end, beauty could still be found.
+            <br>
+            <br>
+        </p>
+
+        <p class="main-paragraph">
+            <h6>Chapter 8 - Resonance of Lost Echoes</h6> 
+                Amidst the ruins, where time seemed to linger like a forgotten melody, Emily and Alex faced the silence that held the weight of their shared history. .${chapter4}. 
+                Together, they embraced the fading echoes, knowing that within the stillness, their love would endure, resonating through the remnants of a world lost to time
+            <br>
+            <br>
+        </p>
+
+        <p class="main-paragraph">
+            <h6>Chapter 9 - Eclipsed Memories</h6> 
+                ${chapter5}.
+            <br>
+            <br>
+        </p>
+
+        <p class="main-paragraph">
+            <h6>Chapter 10 - A Love Unbound</h6> 
+                In the waning days of their shared existence, Emily and Alex stood atop a crumbling skyscraper, looking out over the desolation that stretched beyond the horizon. 
+                The air was thick with the bittersweet scent of memories, and as they held hands, they knew that their time together was drawing to a close. In the last moments of the world, 
+                they found a love that transcended the boundaries of time, leaving behind a legacy of warmth in the cold embrace of a dying Earth. As the stars faded one by one, they faced the inevitable, 
+                knowing that their love story would become a whispered tale among the ruins of a forgotten world.
+            <br>
+            <br>
+        </p>
+
+    ` : ''}
+    `;
+
+    storyContainer.innerHTML = '';
+    storyContainer.appendChild(newStory);
+    storyContainer.classList.remove("hidden");
+}
+
+
+</script>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+</body>
+</html>

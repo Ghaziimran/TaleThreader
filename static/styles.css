@@ -1,0 +1,1576 @@
+
+/* ~~~~~~~~~~~~~~~~~~~index~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.welcometitle {
+  background-color: #46535e;
+  height: 8cm;
+  margin-top: -10cm;
+  padding-top: 1px;
+  color: white;
+  width: 42cm;
+  margin-left: 18cm;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+
+.welcometext {
+  margin-top: 1rem!important;
+  text-align: center;
+}
+
+
+.greetingdiv {
+  margin-top: 0px
+}
+
+.homesubmit {
+  background-color: #8498B0;
+  color: #fff;
+  margin-left: 20px;
+  
+}
+
+.homesubmit:hover {
+  background-color: #6C7D8F;
+}
+
+.greetingbox{ 
+    margin-top: -3rem!important;
+}
+
+.copyrightfoot {
+  margin-top: 21cm;
+  width: 31cm;
+  height: 2cm;
+  position: fixed;
+  margin-left: 5cm;
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.custom-greeting {
+  color: #fff;
+  margin-top: 10px;
+  margin-left: 18cm;
+  padding-top: 20px;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Home buttons~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.btn-danger {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.btn-warning {
+  background-color: #ffc107;
+  color: #000;
+}
+
+.btn-success {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn-group {
+    gap: 40px;
+    padding-bottom: 30px;
+    margin-top: 60px;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Home buttons~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Home buttons~horror~mystery~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.homeM {
+  position: relative;
+  background-color: #4B0082;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.iconM {
+  display: none;
+  width: 48px;
+  height: 45px;
+  margin-bottom: -40px;
+  background: transparent;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 29px;
+  margin-left: 1px;
+}
+
+.text {
+  display: inline-block;
+}
+
+.homeM:hover {
+  background-color: #2d0043;
+  color: #2d0043;
+}
+
+.homeM:hover .iconM {
+  display: inline-block;
+}
+/* 
+.homeH:hover .text {
+  color: #2d0043;
+} */
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Home buttons~horror~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+
+.homeH {
+  position: relative;
+  background-color: #8B0000;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.iconH {
+  display: none;
+  width: 48px;
+  height: 45px;
+  margin-bottom: -40px;
+  background: transparent;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 29px;
+  margin-left: 1px;
+}
+
+.homeH:hover {
+  background-color: #6b0000;
+  color: #6b0000;
+  
+}
+
+.homeH:hover .iconH {
+  display: inline-block;
+}
+/* 
+.homeH:hover .text {
+  color: ;
+} */
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Home buttons~romance~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+
+.homeR {
+  position: relative;
+  background-color: #FFC0CB;
+  color: #333333;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.iconR {
+  display: none;
+  width: 55px;
+  height: 45px;
+  margin-bottom: -40px;
+  background: transparent;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 29px;
+  margin-left: 1px;
+}
+
+.homeR:hover {
+  background-color: #ff8099;
+  color: #ff8099;
+  
+}
+
+.homeR:hover .iconR {
+  display: inline-block;
+}
+
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Home buttons~fantasy~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* .homeF {
+
+  color: #fff;
+}
+.homeF:hover {
+
+  color: #fff;
+} */
+
+.homeF {
+  position: relative;
+  background-color: #000080;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+.iconF {
+  display: none;
+  width: 48px;
+  height: 45px;
+  margin-bottom: -40px;
+  background: transparent;
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 29px;
+  margin-left: 1px;
+}
+
+.homeF:hover {
+  background-color: #00004d;
+  color: #00004d;
+  
+}
+
+.homeF:hover .iconF {
+  display: inline-block;
+}
+
+
+
+
+
+
+
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~Log in page~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+#email1 {
+  width: 20pc;
+  margin-left: 10pc;
+  margin-top: 70px;
+}
+
+#password1 {
+  width: 20pc;
+  margin-left: 10pc;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~Log in page~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.loginbox {
+  margin-left: 68pc;
+  font-size: large;
+  display: block;
+}
+
+#Uname{
+  margin-left: 97px;
+  margin-bottom: 20px;
+  font-size: 23px;
+  color: #050536;
+  margin-top: 112px;
+}
+
+#Pword{
+  margin-left: 97px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-size: 23px;
+  color: #050536;
+}
+
+.titlediv {
+  height: 78px;
+  margin-top: -160px;
+  background-color: #050536;
+  text-align: left;
+}
+
+#logbutton {
+  margin-left: 17pc;
+  margin-top: 30px;
+}
+
+
+.form-label {
+  font-weight: bold;
+}
+
+.form-control {
+  margin-bottom: 15px;
+  font-size: larger;
+}
+
+.sidegradient {
+  background-color: #34495E;
+  width: 61pc;
+  height: 22.73cm;
+  float: right;
+  margin-top: -43pc;
+  display: block;
+  padding: 0px;
+  margin-right: 0cm;
+}
+
+
+
+.custom-btn {
+  background-color: #050536;
+  color: #fff;
+}
+
+.custom-btn:hover {
+  background-color: #050536;
+  color: #fff;
+}
+
+.footercolor {
+  background-color: #34495E;
+  width: 120pc;
+  height: 71px;
+  margin-top: 94px;
+  display: block;
+  padding: 0px;
+}
+
+.sidegradient2 {
+  background-color: #050536;
+  width: 5pc;
+  height: 21cm;
+  float: right;
+  margin-top: -34pc;
+  display: block;
+  padding: 0px;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* body {
+  margin-top: 10pc;
+} */
+
+.welcomeUser{
+  color: #28a745;
+}
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~index~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.logoutbtn {
+  background-color: #808080;
+  padding-block: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 20px;
+  margin-left: 20px;
+  color: #fff;
+}
+.logoutbtn:hover {
+  background-color:  #404040;
+  padding-block: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 20px;
+  margin-left: 20px;
+  color: #fff;
+}
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Login page imgs~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.images {
+  max-width: max-content;
+  
+}
+
+.images img {
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    width: 30pc;
+}
+
+.image-books1 {
+  margin-top: -78pc;
+  margin-left: 20px;
+}
+
+.image-book2 {
+  margin-top: -42pc;
+  margin-left: 3cm;
+}
+
+
+.image-writing {
+  margin-top: -70pc;
+  margin-left: 20px;
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Login page navbar~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.custom-navbarLog {
+  background-color: #34495E;
+}
+
+.custom-navbar-brand {
+  color: #fff;
+  font-size: 24px;
+} 
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Mystery~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.Mysteryheader {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  background-color: #4b0082; 
+  z-index: 1000; 
+  color: #fff;
+}
+
+.custom-button1 {
+  background-color: #4B0082;
+  color: #fff;
+  width: 120pc;
+}
+
+.custom-button1:hover {
+  background-color: #4B0082;
+  color: #fff;
+}
+
+#difficultyText {
+  text-align: center;
+  margin-top: -55px;
+}
+
+.mysterydifficulty {
+  color: #4b0082;
+}
+
+.story-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: -45px;
+}
+
+.storybox {
+  border: 2px solid black;
+  width: 50cm;
+  max-height: 600px;
+  padding: 10px;
+  margin-top: 60px;
+  margin-left: 15px;
+  transition: margin-left 0.5s ease-in-out, max-width 0.5s ease-in-out;
+  overflow-y: auto;
+}
+
+.storybox2 {
+  display: none;
+  border: 2px solid black;
+  max-width: 700px;
+  max-height: 600px;
+  padding: 10px;
+  margin-top: 60px;
+  margin-right: 60px;
+  transition: margin-right 0.5s ease-in-out, max-width 0.5s ease-in-out;
+  overflow-y: auto;
+}
+
+.storybtn {
+  margin-top: 85px;
+  width: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #4B0082;
+  color: #fff;
+}
+
+.storybtn:hover {
+  background-color: #000003;
+  color: #fff
+}
+
+.btn-easy {
+  background-color: #28a745;
+  color: #fff;
+  display: flex;
+}
+
+.btn-medium {
+  background-color: #ffc107;
+  color: #000;
+  display: flex;
+}
+
+.btn-hard {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.group2 {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  margin-top: 76px;
+  position: relative;
+  width: -webkit-fill-available;
+}
+
+.btn {
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.offcanvas {
+  top: 56px;
+  color: #fff;
+}
+
+#user-input {
+  display: none;
+  
+}
+
+.user-input {
+  margin: 0%;
+}
+
+
+.storybtn.clicked {
+  display: none;
+}
+
+.user-input {
+  text-align: center;
+  margin-top: -15cm;
+  margin-left: -22px;
+}
+
+.user-input label {
+  display: inline-block;
+  width: 200px; 
+  margin-bottom: 5px;
+}
+
+.user-input input {
+  width: 150px; 
+  margin-bottom: 5px;
+}
+
+.user-input button {
+  margin-top: 10px;
+}
+
+/* .main-paragraph {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  font-size: 1.25rem;
+  color: black;
+} */
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Mystery~~~Mstory_easy~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+#original-story {
+  color:#4B0082 ;
+}
+
+.original-story-text {
+  color: #4B0082;
+}
+
+.Easytitle {
+  margin-top: 5px;
+  margin-bottom: 20px;
+  margin-left: 138px;
+  color: black;
+}
+
+.EasytitleM {
+  margin-top: 5px;
+  margin-bottom: 20px;
+  margin-left: 138px;
+  color: #4B0082;
+}
+
+.easysubmit {
+  color:#4B0082 ;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Mystery~~~Mstory_medium~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.MediumtitleM {
+  margin-top: 5px;
+  text-align: center;
+  color: #4B0082;
+}
+
+
+#mediumUserInput {
+  text-align: center;
+  display: none;
+
+}
+
+.storytextarea {
+  margin-top: -16cm;
+  margin-left: 21cm;
+  width: 9.5cm;
+}
+
+.original-story-textmystery {
+  color: #4B0082;
+}
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Mystery~~~Mstory_HARD  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+#hardUserInput {
+  text-align: center;
+  display: none;
+  height: 17px;
+}
+
+.hardstory {
+  width: 8cm;
+  height: 17px;
+  margin-left: 21.5cm;
+  margin-top: -15cm;
+}
+
+.hardform {
+  height: 17px;
+}
+
+.Hardtitle {
+  margin-top: 5px;
+  text-align: center;
+  color: #4B0082;
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~HORROR~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.horrorheader {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  background-color: #8B0000; 
+  z-index: 1000; 
+  color: #fff;
+}
+
+
+.horrordifficulty {
+  color: #8B0000;
+}
+
+.custom-button2 {
+  background-color: #8B0000;
+  color: #fff;
+  width: 120pc;
+}
+
+.custom-button2:hover {
+  background-color: #8B0000;
+  color: #fff;
+}
+
+
+.storybtnH {
+  margin-top: 85px;
+  width: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #8B0000;
+  color: #fff;
+}
+
+.storybtnH:hover {
+  background-color: #6b0000;
+  color: #fff;
+}
+
+
+.group3 {
+  margin-top: 80px;
+
+}
+
+.btnH {
+  border-radius: 30px;
+}
+
+.btnH:hover {
+  opacity: 0.8;
+}
+
+.btn1 {
+  color: #fff;
+
+}
+
+.btn2 {
+  color: black;
+
+}
+
+.btn3 {
+  color: #fff; 
+}
+
+#difficultyhorror {
+  color: #8B0000;
+  text-align: center;
+  margin-top: -55px;
+}
+
+.Easytitlehorror {
+  margin-top: 5px;
+  margin-bottom: 20px;
+  margin-left: 138px;
+  color: #8B0000;
+}
+
+#original-storyhorror {
+  color: #8B0000;
+}
+
+.original-story-texthorror {
+  color: #8B0000;
+}
+
+.MediumtitleH {
+  margin-top: 5px;
+  text-align: center;
+}
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Mystery~~~Mstory_easy  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* .submitHEasy {
+  background-color: #28a745;
+  color: #000;
+} */
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Mystery~~~Mstory_medium  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.horrormedium {
+  height:17px;
+}
+
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Fantasy~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.fantasyheader {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  background-color: #000080;
+  z-index: 1000; 
+  color: #fff;
+}
+
+.fantasydifficulty {
+  color:  #000080;
+}
+
+.custom-buttonF {
+  background-color: #000080;
+  color: #fff;
+  width: 120pc;
+}
+
+.custom-buttonF:hover {
+  background-color: #00004d;
+  color: #fff;
+}
+
+
+.storybtnF {
+  margin-top: 85px;
+  width: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #000080;
+  color: #fff;
+}
+
+.storybtnF:hover {
+  background-color: #00004d;
+  color: #fff;
+}
+
+.Easytitlefantasy {
+  margin-top: 5px;
+  margin-bottom: 20px;
+  margin-left: 138px;
+  color: #000080;
+}
+
+#original-storyfantasy {
+  color: #000080;
+}
+
+.original-story-textfantasy {
+  color: #000080;
+}
+
+ 
+/* 
+  background-color: #000080;
+
+
+
+  background-color: #00004d;
+   */
+
+   .MediumtitleF {
+    margin-top: 5px;
+    text-align: center;
+  }
+
+   /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Romance~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+   .romanceheader {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    background-color: #FFC0CB;
+    z-index: 1000; 
+    color: #333333;
+  }
+
+  .romancedifficulty {
+    color:  #FFC0CB;
+  }
+
+  .custom-buttonR {
+    background-color: #FFC0CB;
+    color: #333333;
+    width: 120pc;
+  }
+  
+  .custom-buttonR:hover {
+    background-color: #ff8099;
+    color: #CCCCCC;
+  }
+  
+  .storybtnR {
+    margin-top: 85px;
+    width: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #FFC0CB;
+    color: #333333;
+  }
+  
+  .storybtnR:hover {
+    background-color: #ff8099;
+    color: #CCCCCC;
+  }
+
+  .Easytitleromance {
+    margin-top: 5px;
+    margin-bottom: 20px;
+    margin-left: 138px;
+    color: #ff8099;
+  }
+  
+  #original-storyromance {
+    color: #ff8099;
+  }
+  
+  .original-story-textromance {
+    color: #ff8099;
+  }
+  
+  .MediumtitleR {
+    margin-top: 5px;
+    text-align: center;
+  }
+
+
+
+   /* .homeR {
+    background-color: #FFC0CB;
+    color: #333333;
+  }
+  .homeR:hover {
+    background-color: #ff8099;
+    color: #CCCCCC;
+  }
+   */
+  
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Romance~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+   .welcomeUser-profile{
+    color: #28a745;
+  }
+
+  
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~about~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.containerall{
+  background-color: oldlace;
+  height: 25cm;
+  margin-top: -90px;
+}
+.sidecontainer {
+  background-color: papayawhip;
+  width: 10cm;
+  float: right;
+  height: 4cm;
+  margin-top: -115px;
+  font-size: large;
+  margin-right: 7cm;
+}
+.contentscontainer {
+  background-color: papayawhip;
+  width: 45cm;
+  height: 17cm;
+  margin-top: 15px;
+  margin-left: 2.5cm;
+  float: left;
+}
+
+.abouttitle {
+  padding-top: 40px;
+}
+
+.about-registerbtn {
+  margin-top: 30px;
+}
+
+.about-loginbtn {
+  margin-top: 30px;
+}
+
+.about-logoutbtn{
+  margin-top: 30px;
+}
+
+.abouttitlebox{
+  background-color: papayawhip;
+  width: 15cm;
+  margin-left: 17cm;
+}
+
+.remindercontainer {
+  background-color: papayawhip;
+  width: 10cm;
+  margin-left: 19cm;
+}
+
+
+  
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~register~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.custom-navbarreg {
+  background-color: #062746;
+}
+
+
+*,:after,:before {
+  box-sizing: border-box;
+}
+
+.clearfix:after, .clearfix:before {
+  content: '';
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.login-wrap {
+  width: 100%;
+  max-width: 525px;
+  min-height: 670px;
+  position: relative;
+  box-shadow: 0 12px 15px 0 rgba(0, 0, 0, .24), 0 17px 50px 0 rgba(0, 0, 0, .19);
+  margin-top: 3cm;
+  margin-left: 17cm;
+}
+
+.login-html {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  padding: 90px 70px 50px 70px;
+  background: #062746;
+}
+
+.login-html .sign-up-htm {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  transition: all .4s linear;
+}
+
+.login-html .tab,
+.login-form .group .label,
+.login-form .group .button {
+  text-transform: uppercase;
+}
+
+.login-form {
+  min-height: 345px;
+  position: relative;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.login-form .group {
+  margin-bottom: 15px;
+}
+
+.login-form .group .label,
+.login-form .group .input,
+.login-form .group .button {
+  width: 100%;
+  color: #fff;
+  display: block;
+}
+
+.login-form .group .input,
+.login-form .group .button {
+  border: none;
+  padding: 15px 20px;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, .1);
+}
+
+.login-form .group input[data-type="password"] {
+  -webkit-text-security: circle;
+}
+.login-form .group .label {
+  color: #aaa;
+  font-size: 12px;
+}
+
+.login-form .group .button {
+  background: #1161ee;
+}
+
+.login-html .sign-up:checked + .tab + .login-form .sign-up-htm {
+  transform: rotate(0);
+}
+
+.reggif {
+  margin-left: 3px;
+  margin-top: -5px;
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~login~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+
+.custom-navbarreg-login {
+  background-color: #062746;
+}
+
+*,:after,:before {
+  box-sizing: border-box;
+}
+
+.clearfix:after, .clearfix:before {
+  content: '';
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.login-wrap-login {
+  width: 100%;
+  margin: auto;
+  max-width: 525px;
+  min-height: 588px;
+  position: relative;
+  box-shadow: 0 12px 15px 0 #34495E, 0 17px 50px 0 #273746;
+  margin-top: 4cm;
+}
+
+.login-html-login {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  padding: 90px 70px 50px 70px;
+  background: #ECF0F1;
+}
+
+.login-html-login .tab-login,
+.login-form-login .group-login .label-login,
+.login-form-login .group-login .button-login {
+  text-transform: uppercase;
+}
+
+.login-form-login {
+  min-height: 345px;
+  position: relative;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.login-form-login .group-login {
+  margin-bottom: 15px;
+}
+
+
+.login-form-login .group-login .label-login,
+.login-form-login .group-login .input-login,
+.login-form-login .group-login .button-login {
+  width: 100%;
+  color: black;
+  display: block;
+}
+
+.login-form-login .group-login .input-login,
+.login-form-login .group-login .button-login {
+  border: none;
+  padding: 15px 20px;
+  border-radius: 25px;
+  background: white;
+  margin-left: 5px;
+  margin-top: 18px;
+}
+
+.login-form-login .group-login input[data-type="password"] {
+  -webkit-text-security: circle;
+}
+.login-form-login .group-login .label-login {
+  color: #aaa;
+  font-size: 12px;
+}
+
+.login-form-login .group-login .button-login {
+  background: #2ECC71;
+  margin-top: 65px;
+
+}
+
+.login-html-login .log-in:checked + .tab-login + .login-form-login .log-in-htm {
+  transform: rotate(0);
+}
+
+
+.progressicon {
+  float: right;
+  margin-top: -15px;
+}
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~index cards~~~~~~~~~~~~~~~~~~~~~Romance~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.figureR {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 290px;
+  height: 395px;
+  padding: 20px 20px;
+  background-image: url('https://images.pexels.com/photos/1368382/pexels-photo-1368382.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  overflow: hidden;
+}
+
+.figureR:before, .figureR:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.figureR:before {
+  content: '';
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 0;
+}
+
+.figureR:after {
+  content: '';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  overflow: hidden;
+}
+
+.figureR:hover {
+  background-size: 175%;
+}
+
+.figureR:hover:after {
+  content: '❤️';
+  background-color: #FFC0CB;
+  color: white;
+  font-size: 72px;
+  z-index: 2;
+}
+
+.figureR:hover .date {
+  bottom: -59px;
+}
+
+.figureR:hover figcaption {
+  transform: translateY(-110%);
+}
+
+
+.figureR figcaption {
+  color: white;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  z-index: 1;
+}
+
+.figureR figcaption h4 {
+  margin: 0 0 5px;
+  font-family: 'Source Code Pro', sans-serif;
+  font-size: 24px;
+  line-height: 1.35;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.7);
+}
+
+.figureR figcaption h4 > span {
+  background-color: rgba(241, 196, 15, 0.8);
+}
+
+.figureR figcaption p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~index cards~~~~~~~~~~~~~~~~~FANTASY~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+
+
+
+.figureF {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 290px;
+  height: 395px;
+  padding: 20px 20px;
+  background-image: url(images/fantasylandscape.jpeg);
+  background-repeat: no-repeat;
+  background-position-x: -50px;
+  background-size: 11cm;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  overflow: hidden;
+}
+
+.figureF:before, .figureF:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.figureF:before {
+  content: '';
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 0;
+}
+
+.figureF:after {
+  content: '';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  overflow: hidden;
+}
+
+.figureF:hover {
+  background-size: 175%;
+}
+
+.figureF:hover:after {
+  content: '🐉';
+  background-color: #000080;
+  color: white;
+  font-size: 72px;
+  z-index: 2;
+}
+
+.figureF:hover .date {
+  bottom: -59px;
+}
+
+.figureF:hover figcaption {
+  transform: translateY(-110%);
+}
+
+
+.figureF figcaption {
+  color: white;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  z-index: 1;
+}
+
+.figureF figcaption h4 {
+  margin: 0 0 5px;
+  font-family: 'Source Code Pro', sans-serif;
+  font-size: 24px;
+  line-height: 1.35;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.7);
+}
+
+.figureF figcaption h4 > span {
+  background-color: rgba(241, 196, 15, 0.8);
+}
+
+.figureF figcaption p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~index cards~~~~~~~~~~~~~~~mystery~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+
+
+.figureM {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 290px;
+  height: 395px;
+  padding: 20px 20px;
+  background-image: url(images/mysterybackground.jpg);
+  background-repeat: no-repeat;
+  background-position-y: -57px;
+  background-size: 11cm;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  overflow: hidden;
+}
+
+
+.figureM:before, .figureM:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.figureM:before {
+  content: '';
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 0;
+}
+
+.figureM:after {
+  content: '';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  overflow: hidden;
+}
+
+.figureM:hover {
+  background-size: 175%;
+}
+
+.figureM:hover:after {
+  content: '🕵️‍♂️';
+  background-color: #4B0082;
+  color: white;
+  font-size: 72px;
+  z-index: 2;
+}
+
+.figureM:hover .date {
+  bottom: -59px;
+}
+
+.figureM:hover figcaption {
+  transform: translateY(-110%);
+}
+
+
+.figureM figcaption {
+  color: white;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  z-index: 1;
+}
+
+.figureM figcaption h4 {
+  margin: 0 0 5px;
+  font-family: 'Source Code Pro', sans-serif;
+  font-size: 24px;
+  line-height: 1.35;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.7);
+}
+
+.figureM figcaption h4 > span {
+  background-color: rgba(241, 196, 15, 0.8);
+}
+
+.figureM figcaption p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~index cards~~~~~~~~~~~~~~~~Horror~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+
+.figureH {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 290px;
+  height: 397px;
+  padding: 20px 20px;
+  background-image: url(images/horrorlandscape.jpg);
+  background-repeat: no-repeat;
+  background-position-x: -147px;
+  background-size: 17cm;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  overflow: hidden;
+}
+
+
+.figureH:before, .figureH:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.figureH:before {
+  content: '';
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 0;
+}
+
+.figureH:after {
+  content: '';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  overflow: hidden;
+}
+
+.figureH:hover {
+  background-size: 175%;
+}
+
+.figureH:hover:after {
+  content: '👻';
+  background-color: #8B0000;
+  color: white;
+  font-size: 72px;
+  z-index: 2;
+}
+
+.figureH:hover .date {
+  bottom: -59px;
+}
+
+.figureH:hover figcaption {
+  transform: translateY(-110%);
+}
+
+
+.figureH figcaption {
+  color: white;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  z-index: 1;
+}
+
+.figureH figcaption h4 {
+  margin: 0 0 5px;
+  font-family: 'Source Code Pro', sans-serif;
+  font-size: 24px;
+  line-height: 1.35;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.7);
+}
+
+.figureH figcaption h4 > span {
+  background-color: rgba(241, 196, 15, 0.8);
+}
+
+.figureH figcaption p {
+  margin: 0;
+  line-height: 1.5;
+}

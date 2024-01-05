@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en" style=" font-family: 'Source Sans Pro', sans-serif;
+                        font-size: 16px;
+                        font-smooth: auto;
+                        font-weight: 300;
+                        line-height: 1.5;
+                        color: white;">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    <link href="{{url_for('static', filename='styles.css')}}" rel="stylesheet">
+</head>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<body style="position: relative;
+             display: flex;
+             align-items: center;
+             justify-content: center;
+             width: 100%;
+             height: 100vh;
+">
+    <header>
+        <nav class="navbar navbar-dark bg-dark fixed-top">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">{% block subhead %}TaleThreader{% endblock %}</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#myoffcanvasDarkNavbar" aria-controls="myoffcanvasDarkNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="myoffcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel"></h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        {% if username %}
+                        <p class="welcomeUser">Welcome, {{ username }}!</p>
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="{{ url_for('index' ) }}">Home</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link active" aria-current="page" href="{{ url_for('mystery' ) }}">Mystery</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link active" aria-current="page" href="{{ url_for('fantasy' ) }}">Fantasy</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link active" aria-current="page" href="{{ url_for('romance' ) }}">Romance</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link active" aria-current="page" href="{{ url_for('horror' ) }}">Horror</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link active" aria-current="page" href="{{ url_for('login' ) }}">Login</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link active" aria-current="page" href="{{ url_for('register' ) }}">Register</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link active" aria-current="page" href="{{ url_for('profile' ) }}">Profile</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link active" aria-current="page" href="{{ url_for('about' ) }}">About Us</a>
+                            </li>
+                        </ul>
+                        <a class="nav-link active logoutbtn" href="{{ url_for('logout') }}">Logout</a>
+                        {% else %}
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item active">
+                                <a class="nav-link active" aria-current="page" href="{{ url_for('login' ) }}">Login</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link active" aria-current="page" href="{{ url_for('register' ) }}">Register</a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link active" aria-current="page" href="{{ url_for('about' ) }}">About Us</a>
+                            </li>
+                        </ul>
+                    {% endif %}
+                        <form class="d-flex mt-3" role="search">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-success" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<main>
+    <div class="welcometitle">
+        <div class="container welcometext">
+            <h1 class="">Welcome to TaleThreader</h1>
+            <h5>Happy writing!</h5>
+          
+            <p>Tell us your name</p>
+            <form id="nameForm" style="margin-top: 45px">
+                <input type="text" id="nameInput" placeholder="Name">
+                <button type="submit" id="submit-name" class="btn btn homesubmit">Submit</button>
+            </form>
+        </div>
+        <div class="greetingdiv">    
+            <p id="greeting"></p>
+            <div class="d-flex justify-content-center mt-5 greetingbox">
+                <div class="btn-group">
+
+
+
+                    <a href="{{ url_for('romance') }}" style="text-decoration: none;">
+                        <figure class="figureR">
+                            <figcaption class="figcapR">
+                                <h4> <span>Romance</span> </h4>
+                                <p>Your romance description goes here.</p>
+                            </figcaption>
+                        </figure>
+                    </a>
+
+
+                    <a href="{{ url_for('fantasy') }}" style="text-decoration: none;">
+                        <figure class="figureF">
+                            <figcaption class="figcapF">
+                                <h4><span>Fantasy</span></h4>
+                                <p>Your fantasy description goes here.</p>
+                            </figcaption>
+                        </figure>
+                    </a>
+
+
+                    <a href="{{ url_for('mystery' ) }}" style="text-decoration: none;">
+                        <figure class="figureM">
+                            <figcaption class="figcapM">
+                                <h4><span>Mystery</span></h4>
+                                <p>Your mystery description goes here.</p>
+                            </figcaption>
+                        </figure>
+                    </a>
+
+
+                    <a href="{{ url_for('horror') }}" style="text-decoration: none;">
+                        <figure class="figureH">
+                            <figcaption class="figcapH">
+                                <h4><span>Horror</span></h4>
+                                <p>Your horror description goes here.</p>
+                            </figcaption>
+                        </figure>
+                    </a>
+
+
+                </div>
+            </div>     
+        </div>
+    </div>
+</main>
+
+    <div id="greeting" class="custom-greeting"></div>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<footer class="mb-5 small text-center text-muted copyrightfoot">
+        &copy; Copyright { 2023 } - Final project
+</footer>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+<div class="modal fade" id="logoutConfirmationModal" tabindex="-1" role="dialog" aria-labelledby="logoutConfirmationModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="logoutConfirmationModalLabel">Logout Confirmation</h5>
+                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to log out?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <a class="btn btn-primary" href="{{ url_for('logout') }}">Logout</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+      
+      <script>
+        document.getElementById('nameForm').addEventListener('submit',function(event) {
+            event.preventDefault();
+            var name = document.getElementById('nameInput').value;
+            document.getElementById('greeting').innerHTML = 'Hello, ' + name + ' <br> Where would you like to go?';
+            document.getElementById('greeting').classList.add('custom-greeting');
+            document.getElementById('cardContainer').style.display = 'block';
+        });
+
+      </script>
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH01sSSs5nCTpuj/zy4c+OGpamoFVy38MVBn/aI1t9CA8ePbQqhDTC+ip" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQx2+" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+      <script>
+        $(document).ready(function(){
+            $("#nameForm").submit(function(event){
+                event.preventDefault();
+                var name = $("#nameInput").val();
+                sessionStorage.setItem("name", name);
+            })
+        })
+      </script>
+
+    <script>
+       const offcanvasElementList = document.querySelectorAll('.offcanvas')
+       const offcanvasList = [...offcanvasElementList].map(offcanvasEl => new bootstrap.Offcanvas(offcanvasEl))
+    </script>
+
+<script>
+    const myModal = document.getElementById('myModal')
+const myInput = document.getElementById('myInput')
+
+myModal.addEventListener('shown.bs.modal', () => {
+  myInput.focus()
+})
+</script>
+
+<script>
+    document.getElementById('logoutBtn').addEventListener('click', function() {
+        $('#logoutConfirmationModal').modal('show');
+    });
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+
+    <title>{% block title %}Horror{% endblock %}</title>
+
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+</head>
+
+<body>
+
+    <header class="horrorheader">
+        <button class="btn btn custom-button2" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">{% block subhead
+            %}Horror{% endblock %}</button>
+        <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+            aria-labelledby="offcanvasWithBothOptionsLabel" data-bs-autohide="false">
+            <div class="offcanvas-header text-bg-dark" tabindex="-1" id="myoffcanvasDarkNavbar"
+                aria-labelledby="offcanvasDarkNavbarLabel">
+                <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel"></h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body bg-dark text-white">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page"
+                            href="{{ url_for('index' ) }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page"
+                            href="{{ url_for('mystery' ) }}">Mystery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page"
+                            href="{{ url_for('fantasy' ) }}">Fantasy</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page"
+                            href="{{ url_for('romance' ) }}">Romance</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<h1 id="difficultyText" class="horrordifficulty">Select a difficulty:</h1>
+
+<div class="btn-group group2">
+    <button class="btn btn-success" onclick="changeDifficulty('Easy')">Easy</button>
+    <button class="btn btn-warning" onclick="changeDifficulty('Medium')">Medium</button>
+    <button class="btn btn-danger" onclick="changeDifficulty('Hard')">Hard</button>
+</div>
+
+<button class="btn btn storybtnH" id="showStoryButton" onclick="showStory()">Show Story</button>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<div class="story-container">
+    <div class="storybox" id="storybox1">
+        <h5 id="storyText">Click the button to see the story...</h5>
+    </div>
+    <div class="storybox storybox2 hidden" id="storybox2">
+        <h5 id="updatedStoryText">Fill in the blanks to see the story...</h5>
+    </div>
+ </div>
+
+ <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~EASY~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+ <div id="user-input" class="user-input">
+    <label for="buildingType">Building Type: </label>
+    <input type="text" id="buildingType">
+    <br>
+    <label for="journalistName">Journalist's Name: </label>
+    <input type="text" id="journalistName">
+    <br>
+    <label for="partnerType">Partner Type: </label>
+    <input type="text" id="partnerType">
+    <br>
+    <label for="partnerName">Partner's Name: </label>
+    <input type="text" id="partnerName">
+    <br>
+    <label for="sound">Sound: </label>
+    <input type="text" id="sound">
+    <br>
+    <label for="time">Time: </label>
+    <input type="text" id="time">
+    <br>
+    <label for="eyeType">Type of eyes: </label>
+    <input type="text" id="eyeType">
+    <br>
+    <button class="btn btn-success" onclick="generateStory()">Submit</button>
+  </div>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~MEDIUM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+    <div class="mb-3 storytextarea" id="mediumUserInput">
+        <label for="StoryTextarea1" class="form-label">Chapter 2</label>
+        <textarea class="form-control horrormedium" id="StoryTextarea1" rows="3"></textarea>
+
+        <div class="mb-3">
+            <label for="StoryTextarea2" class="form-label">Chapter 3</label>
+            <textarea class="form-control horrormedium" id="StoryTextarea2" rows="3"></textarea>
+        </div>
+        
+        <div class="mb-3">
+            <label for="StoryTextarea3" class="form-label">Chapter 4</label>
+            <textarea class="form-control horrormedium" id="StoryTextarea3" rows="3"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="StoryTextarea4" class="form-label">Chapter 4</label>
+            <textarea class="form-control horrormedium" id="StoryTextarea4" rows="3"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="StoryTextarea5" class="form-label">Chapter 4</label>
+            <textarea class="form-control horrormedium" id="StoryTextarea5" rows="3"></textarea>
+        </div>
+        
+        <button class="btn btn-success" onclick="submitStory()">Submit</button>
+        
+    </div>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~HARD~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+    <div class="mb-3 storytextarea hidden hardstory" id="hardUserInput">
+        <label for="ChapterTextarea1" class="form-label">Chapter 2</label>
+        <textarea class="form-control hardform" id="ChapterTextarea1" rows="3"></textarea>
+    
+        <label for="ChapterTextarea2" class="form-label">Chapter 4</label>
+        <textarea class="form-control hardform" id="ChapterTextarea2" rows="3"></textarea>
+    
+        <label for="ChapterTextarea3" class="form-label">Chapter 7</label>
+        <textarea class="form-control hardform" id="ChapterTextarea3" rows="3"></textarea>
+    
+        <label for="ChapterTextarea4" class="form-label">Chapter 8</label>
+        <textarea class="form-control hardform" id="ChapterTextarea4" rows="3"></textarea>
+    
+        <label for="ChapterTextarea5" class="form-label">Chapter 9</label>
+        <textarea class="form-control hardform" id="ChapterTextarea5" rows="3"></textarea>
+    
+        <button class="btn btn-success" style="margin-top: 10px;" onclick="submitChapters()">Submit Chapters</button>
+    </div> 
+
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<script>
+var currentDifficulty = 'Easy';
+
+function changeDifficulty(difficulty) {
+
+    document.getElementById("StoryTextarea1").value = '';
+    document.getElementById("StoryTextarea2").value = '';
+    document.getElementById("StoryTextarea3").value = '';
+    document.getElementById("StoryTextarea4").value = '';
+    document.getElementById("StoryTextarea5").value = '';
+    document.getElementById("ChapterTextarea1").value = '';
+    document.getElementById("ChapterTextarea2").value = '';
+    document.getElementById("ChapterTextarea3").value = '';
+    document.getElementById("ChapterTextarea4").value = '';
+    document.getElementById("ChapterTextarea5").value = '';
+
+    document.getElementById('storybox2').innerHTML = '';
+
+    currentDifficulty = difficulty;
+    var storyTextElement = document.getElementById('storyText');
+    var showStoryButton = document.getElementById('showStoryButton');
+    var storybox1 = document.getElementById('storybox1');
+    var storybox2 = document.getElementById('storybox2');
+    var userInputDiv = document.getElementById('user-input');
+    var mediumUserInputDiv = document.getElementById('mediumUserInput');
+    var hardUserInputDiv = document.getElementById('hardUserInput'); 
+
+    storyTextElement.textContent = 'Click "Show Story" to see the ' + currentDifficulty +
+        ' story...';
+    showStoryButton.style.display = 'block';
+    showStoryButton.classList.remove('btn-easy', 'btn-medium', 'btn-hard');
+    showStoryButton.classList.add('btn-' + currentDifficulty.toLowerCase());
+
+    storybox1.style.marginLeft = '15px';
+    storybox1.style.maxWidth = '100vw';
+
+    storybox2.style.display = 'none';
+    userInputDiv.style.display = 'none';
+    mediumUserInputDiv.style.display = 'none';
+    hardUserInputDiv.style.display = 'none'; 
+}
+
+    if (currentDifficulty.toLowerCase() === 'easy') {
+        userInputDiv.style.display = 'block';
+    } else if (currentDifficulty.toLowerCase() === 'medium') {
+        mediumUserInputDiv.style.display = 'block';
+    } else if (currentDifficulty.toLowerCase() === 'hard') {
+        hardUserInputDiv.style.display = 'block';
+    }
+
+
+    function showStory() {
+    var storyTextElement = document.getElementById('storyText');
+    var showStoryButton = document.getElementById('showStoryButton');
+    var storybox1 = document.getElementById('storybox1');
+    var storybox2 = document.getElementById('storybox2');
+    var userInputDiv = document.getElementById('user-input');
+    var mediumUserInputDiv = document.getElementById('mediumUserInput');
+    var hardUserInputDiv = document.getElementById('hardUserInput');
+
+
+    document.getElementById("buildingType").value || '';
+    document.getElementById("journalistName").value || '';
+    document.getElementById("partnerType").value || '';
+    document.getElementById("partnerName").value || '';
+    document.getElementById("sound").value || '';
+    document.getElementById("time").value || '';   
+    document.getElementById("eyeType").value || '';
+
+    if (currentDifficulty.toLowerCase() === 'medium') {
+        mediumUserInputDiv.style.display = 'block';
+    } else if (currentDifficulty.toLowerCase() === 'hard') {
+        hardUserInputDiv.style.display = 'block';
+    } else {
+        mediumUserInputDiv.style.display = 'none';
+        hardUserInputDiv.style.display = 'none';
+    }
+
+    fetch('/horror/GenreH/Hstory_' + currentDifficulty.toLowerCase() + '.html')
+    .then(response => response.text())
+        .then(data => {
+            storyTextElement.innerHTML = data;
+            showStoryButton.classList.add('btn-' + currentDifficulty.toLowerCase());
+
+            storybox1.style.marginLeft = '85px';
+            storybox1.style.maxWidth = '700px';
+
+            storybox2.style.display = 'block';
+
+            if (currentDifficulty.toLowerCase() === 'easy') {
+                userInputDiv.style.display = 'block';
+            } else {
+                userInputDiv.style.display = 'none';
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching story:', error);
+            storyTextElement.innerHTML = 'Error fetching the story.';
+        });
+}
+
+
+
+function changeText(difficulty) {
+    var difficultyTextElement = document.getElementById('difficultyText');
+    var userInputDiv = document.getElementById('user-input');
+    var mediumUserInputDiv = document.getElementById('mediumUserInput');
+
+    difficultyTextElement.textContent = 'You selected ' + difficulty + ' difficulty.';
+    difficultyTextElement.classList.add('centered-text');
+
+    userInputDiv.style.display = 'none';
+    mediumUserInputDiv.style.display = 'none';
+}
+
+function generateStory(userInput) {
+    const buildingType = document.getElementById("buildingType").value || '________';
+    const journalistName = document.getElementById("journalistName").value || '________';
+    const partnerType = document.getElementById("partnerType").value || '________';
+    const partnerName = document.getElementById("partnerName").value || '________';
+    const sound = document.getElementById("sound").value || '________';
+    const time = document.getElementById("time").value || '________';
+    const eyeType = document.getElementById("eyeType").value || '________';
+
+    const storyContainer = document.getElementById("storybox2");
+
+    const newStory = document.createElement("div");
+    newStory.classList.add("story");
+
+    newStory.innerHTML = `
+    ${currentDifficulty.toLowerCase() === 'easy' ?`
+    <h2 class="Easytitle">Haunted Reckoning</h2>
+            <p class="main-paragraph">
+                The old ${buildingType} stood alone on the outskirts of town, its dilapidated façade looming like a spectral presence against the moonlit sky.
+                Locals whispered of its cursed history, the tales passing through generations like a macabre inheritance. ${journalistName}, 
+                a skeptical journalist, alongside their trusty ${partnerType} ${partnerName} decided to spend a night within its decaying walls to unravel the mysteries that clung to the air like a sinister perfume.
+            </p>
+            <br>
+            <br>
+            <p class="main-paragraph">
+                As ${journalistName} and ${partnerName} explored the ${buildingType}'s desolate halls, 
+                a chill crept through the air, freezing the marrow in their bones. Shadows danced on the walls, 
+                morphing into grotesque figures that seemed to be watching, waiting. The creaking floorboards beneath ${buildingType}'s footsteps echoed like distant ${sound}, 
+                and the oppressive silence was shattered by occasional, inexplicable whispers that echoed through the abandoned rooms.
+            </p>
+            <br>
+            <br>
+            <p class="main-paragraph">
+                As ${time} approached, an otherworldly presence gripped ${journalistName}. 
+                Unseen hands seemed to pull them deeper into the ${buildingType}'s heart, where a long-forgotten secret awaited revelation. 
+                In the pitch-black darkness, a ghastly figure materialized, its ${eyeType} eyes locking with ${journalistName}'s. 
+                The air grew thick with malevolence, and the walls seemed to close in. ${journalistName}'s heart raced as a disembodied voice whispered the long-buried truth, 
+                sealing their fate within the haunted confines of the ${buildingType}.
+            </p>
+            <br>
+            <br>
+            <p class="main-paragraph">
+                The temperature plummeted, and ethereal whispers turned into agonized moans. 
+                Unseen hands became tangible claws, scratching at the walls. ${journalistName} and ${partnerName}'s flashlights flickered, 
+                casting eerie shadows that danced with the malevolent entities lurking in the corners. The ${buildingType} seemed to breathe, 
+                its decaying heartbeat echoing through the halls. Each step toward the truth felt like a descent into madness, and as the spectral figure reached out, 
+                ${journalistName} and ${partnerName} realized they were not alone—they were part of the ${buildingType}'s unending nightmare.
+            </p>
+    ` : ''}
+    
+    ${currentDifficulty.toLowerCase() === 'medium' ?`
+    <h2 class="Easytitle">A village lost in time</h2>
+    <h5 class="original-story-text">
+        In the heart of the dense woods, there lay a forgotten village, hidden from the prying eyes of the outside world. 
+        Legend spoke of a curse that had befallen its residents, turning them into malevolent spirits trapped in perpetual torment. 
+        Intrigued by the macabre tales, Emma, an intrepid paranormal investigator, embarked on a journey to unravel the mysteries that cloaked the village in darkness.
+        <br>
+        <br>
+        Upon entering the dilapidated village, Emma felt an otherworldly chill in the air. 
+        ${userInput1}. 
+        The village seemed frozen in time, its tragic history waiting to be unearthed.
+        <br>
+        <br>
+        Emma's investigation stirred the spirits that lingered in the village. 
+        Each step she took echoed with anguished moans, and apparitions flickered in and out of existence. The village square, ${userInput2}. 
+        As night fell, the spirits became more restless, their ethereal forms weaving through the shadows.
+        <br>
+        <br>
+        Emma uncovered an old journal that chronicled the tragic events that led to the curse. ${userInput3}— all intertwined in a tale of sorrow and despair. 
+        The more Emma learned, the more the spirits' wails intensified. Determined to break the curse, she sought a way to appease the vengeful entities and bring peace to the forsaken village.
+        <br>
+        <br>
+        Guided by the journal's cryptic entries, Emma discovered a hidden chamber beneath the village square. There, an ancient altar stood,${userInput4}. Emma, armed with newfound knowledge, began the ritual with trepidation.
+        <br>
+        <br>
+        As the incantation unfolded, the spirits' energy surged. The air crackled with an otherworldly force, 
+        and the village seemed to convulse with the echoes of centuries-old suffering. In a climactic moment, the curse began to unravel, and the spirits, 
+        freed from their ethereal shackles, ascended into the afterlife. The village, once steeped in darkness, basked in a momentary glow as the curse lifted.
+        <br>
+        <br>
+        With the curse broken, Emma stood amidst the now-silent village. The air, once heavy with anguish, felt lighter. 
+        The forgotten village, though still in ruins, exuded an eerie serenity. As she left the woods, Emma couldn't shake the feeling of ${userInput5}. 
+        The spirits, now at peace, had left behind an indelible mark, and the echoes of their redemption lingered in the air, a bittersweet farewell to a village lost in time.
+        <br>
+        <br>
+    </h5>
+    ` : ''}
+    `;
+
+    storyContainer.innerHTML = '';
+    storyContainer.appendChild(newStory);
+    storyContainer.classList.remove("hidden");
+}
+
+function submitStory() {
+    const userInput1 = document.getElementById("StoryTextarea1").value || '__________';
+    const userInput2 = document.getElementById("StoryTextarea2").value || '__________';
+    const userInput3 = document.getElementById("StoryTextarea3").value || '__________';
+    const userInput4 = document.getElementById("StoryTextarea4").value || '__________';
+    const userInput5 = document.getElementById("StoryTextarea5").value || '__________';
+
+    const storyContainer = document.getElementById("storybox2");
+
+    const newStory = document.createElement("div");
+    newStory.classList.add("story");
+
+    newStory.innerHTML = `
+    <h2 class="Easytitle">A village lost in time</h2>
+    <h5 class="original-story-text">
+        In the heart of the dense woods, there lay a forgotten village, hidden from the prying eyes of the outside world. 
+        Legend spoke of a curse that had befallen its residents, turning them into malevolent spirits trapped in perpetual torment. 
+        Intrigued by the macabre tales, Emma, an intrepid paranormal investigator, embarked on a journey to unravel the mysteries that cloaked the village in darkness.
+        <br>
+        <br>
+        Upon entering the dilapidated village, Emma felt an otherworldly chill in the air. 
+        ${userInput1}. 
+        The village seemed frozen in time, its tragic history waiting to be unearthed.
+        <br>
+        <br>
+        Emma's investigation stirred the spirits that lingered in the village. 
+        Each step she took echoed with anguished moans, and apparitions flickered in and out of existence. The village square, ${userInput2}. 
+        As night fell, the spirits became more restless, their ethereal forms weaving through the shadows.
+        <br>
+        <br>
+        Emma uncovered an old journal that chronicled the tragic events that led to the curse. ${userInput3}— all intertwined in a tale of sorrow and despair. 
+        The more Emma learned, the more the spirits' wails intensified. Determined to break the curse, she sought a way to appease the vengeful entities and bring peace to the forsaken village.
+        <br>
+        <br>
+        Guided by the journal's cryptic entries, Emma discovered a hidden chamber beneath the village square. There, an ancient altar stood,${userInput4}. Emma, armed with newfound knowledge, began the ritual with trepidation.
+        <br>
+        <br>
+        As the incantation unfolded, the spirits' energy surged. The air crackled with an otherworldly force, 
+        and the village seemed to convulse with the echoes of centuries-old suffering. In a climactic moment, the curse began to unravel, and the spirits, 
+        freed from their ethereal shackles, ascended into the afterlife. The village, once steeped in darkness, basked in a momentary glow as the curse lifted.
+        <br>
+        <br>
+        With the curse broken, Emma stood amidst the now-silent village. The air, once heavy with anguish, felt lighter. 
+        The forgotten village, though still in ruins, exuded an eerie serenity. As she left the woods, Emma couldn't shake the feeling of ${userInput5}. 
+        The spirits, now at peace, had left behind an indelible mark, and the echoes of their redemption lingered in the air, a bittersweet farewell to a village lost in time.
+        <br>
+        <br>
+    </h5>
+    `;
+
+    
+
+    storyContainer.innerHTML = '';
+    storyContainer.appendChild(newStory);
+
+    storyContainer.classList.remove("hidden");
+}
+
+function submitChapters() {
+    const chapter1 = document.getElementById("ChapterTextarea1").value || '__________';
+    const chapter2 = document.getElementById("ChapterTextarea2").value || '__________';
+    const chapter3 = document.getElementById("ChapterTextarea3").value || '__________';
+    const chapter4 = document.getElementById("ChapterTextarea4").value || '__________';
+    const chapter5 = document.getElementById("ChapterTextarea5").value || '__________';
+
+    const storyContainer = document.getElementById("storybox2");
+
+    const newStory = document.createElement("div");
+    newStory.classList.add("story");
+
+    newStory.innerHTML = `
+    ${currentDifficulty.toLowerCase() === 'hard' ?`
+        <h2 class="Hardtitle">The Undying Eternal Night</h2>
+        <p class="main-paragraph">
+            <h6>Chapter 1: The Desolation</h6> 
+                In the aftermath of the apocalypse, the world had become a desolate landscape, devoid of life and teeming with the stench of decay. 
+                Buildings, once bustling with the sounds of civilization, now stood as hollow shells, haunted by the memories of a bygone era. 
+                The air was thick with an oppressive silence, broken only by the distant moans of the undead that roamed the streets. John, a lone survivor, 
+                navigated the desolation with a heavy heart, his every step echoing the weight of the world's demise.
+            <br>
+            <br>
+        </p>
+
+        <p class="main-paragraph">
+            <h6>Chapter 2: The Silent Ward</h6> 
+                Amid the ruins, John stumbled upon an abandoned hospital, its broken windows and faded signage hinting at the untold horrors that lay within. ${chapter1}.
+            <br>
+            <br>
+        </p>
+
+        <p class="main-paragraph"> 
+            <h6>Chapter 3: The Haunting Whispers</h6> 
+                John sought refuge in an abandoned warehouse, the cold steel providing a feeble barrier against the horrors outside. 
+                As night fell, the warehouse became a haven for more than just the living. Whispers echoed through the cavernous space, whispers that seemed to crawl beneath John's skin. 
+                Each shadow held a fleeting shape, and unseen eyes followed his every move. Sleep became an elusive luxury as the haunting whispers grew louder, tormenting his frayed sanity.
+            <br>
+            <br>
+        </p>
+
+        <p class="main-paragraph">
+            <h6>Chapter 4: City of the Damned</h6> 
+                ${chapter2}
+            <br>
+            <br>
+        </p>
+
+        <p class="main-paragraph">
+            <h6>Chapter 5: The Hollow City</h6> 
+                Wandering through the remnants of a once-vibrant city, John encountered a haunting spectacle. 
+                A metropolis now reduced to a graveyard, skyscrapers acting as tombstones for the fallen. The echoes of the past mixed with the moans of the undead, 
+                creating a dissonant symphony of despair. John pressed forward, haunted by memories of the city's former glory, now replaced by the grotesque dance of the undead that prowled the empty streets.
+            <br>
+            <br>
+        </p>
+
+        <p class="main-paragraph">
+            <h6>Chapter 6: The Abandoned Laboratory</h6> 
+                Wandering through the remnants of a once-vibrant city, John encountered a haunting spectacle. 
+                A metropolis now reduced to a graveyard, skyscrapers acting as tombstones for the fallen. The echoes of the past mixed with the moans of the undead, 
+                creating a dissonant symphony of despair. John pressed forward, haunted by memories of the city's former glory, now replaced by the grotesque dance of the undead that prowled the empty streets.
+            <br>
+            <br>
+        </p>
+
+        <p class="main-paragraph">
+            <h6>Chapter 7: The Sinister Experiment</h6> 
+                ${chapter3}. 
+                As John delved deeper into the laboratory's secrets, a haunting realization gripped him—the malevolent force that unleashed the apocalypse was far more sinister and pervasive than he could have ever imagined.
+            <br>
+            <br>
+        </p>
+
+        <p class="main-paragraph">
+            <h6>Chapter 8: Shadows in the Abandoned Streets</h6> 
+                ${chapter4}.
+            <br>
+            <br>
+        </p>
+
+        <p class="main-paragraph">
+            <h6>Chapter 9: The Desperate Exodus</h6> 
+                As John decoded the cryptic data, a plan formed—to reach a rumored safe zone on the outskirts of the desolation. 
+                The journey was treacherous, fraught with peril at every turn. Blanketed by darkness, John moved stealthily through the abandoned streets, 
+                his survival instincts heightened. The undead, drawn by the scent of the living, lurked in every shadow. 
+                With each step, the oppressive silence was shattered by the guttural groans of the pursuing horde. ${chapter5}.
+            <br>
+            <br>
+        </p>
+
+        <p class="main-paragraph">
+            <h6>Chapter 10: The Final Stand</h6> 
+                Reaching the outskirts, John faced a formidable obstacle—a sea of undead blocking his path. 
+                Desperation fueled his courage as he fought through the horde, the stench of decay overwhelming. 
+                Blanketed in darkness, he pressed forward, each confrontation a heart-pounding struggle for survival. 
+                The words "The safe zone, a glimmer of hope in a world swallowed by darkness, awaited on the other side." echoed in his mind. 
+                The final stand had begun, and the fate of humanity hung in the balance as John battled his way toward the elusive sanctuary.
+            <br>
+            <br>
+        </p>
+
+    ` : ''}
+    `;
+
+    storyContainer.innerHTML = '';
+    storyContainer.appendChild(newStory);
+    storyContainer.classList.remove("hidden");
+}
+
+
+</script>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+</body>
+</html>

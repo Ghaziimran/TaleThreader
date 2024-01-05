@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+
+    <title>{% block title %}Fantasy{% endblock %}</title>
+
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+</head>
+
+<body>
+
+    <header class="fantasyheader">
+        <button class="btn btn custom-buttonF" type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">{% block subhead
+            %}Fantasy{% endblock %}</button>
+        <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+            aria-labelledby="offcanvasWithBothOptionsLabel" data-bs-autohide="false">
+            <div class="offcanvas-header text-bg-dark" tabindex="-1" id="myoffcanvasDarkNavbar"
+                aria-labelledby="offcanvasDarkNavbarLabel">
+                <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel"></h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                    aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body bg-dark text-white">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page"
+                            href="{{ url_for('index' ) }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page"
+                            href="{{ url_for('horror' ) }}">Horror</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page"
+                            href="{{ url_for('mystery' ) }}">Mystery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active text-white" aria-current="page"
+                            href="{{ url_for('romance' ) }}">Romance</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<h1 id="difficultyText" class="fantasydifficulty">Select a difficulty:</h1>
+
+<div class="btn-group group2">
+    <button class="btn btn-success" onclick="changeDifficulty('Easy')">Easy</button>
+    <button class="btn btn-warning" onclick="changeDifficulty('Medium')">Medium</button>
+    <button class="btn btn-danger" onclick="changeDifficulty('Hard')">Hard</button>
+</div>
+
+<button class="btn btn storybtnF" id="showStoryButton" onclick="showStory()">Show Story</button>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<div class="story-container">
+    <div class="storybox" id="storybox1">
+        <h5 id="storyText">Click the button to see the story...</h5>
+    </div>
+    <div class="storybox storybox2 hidden" id="storybox2">
+        <h5 id="updatedStoryText">Fill in the blanks to see the story...</h5>
+    </div>
+ </div>
+
+ <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~EASY~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+ <div id="user-input" class="user-input">
+    <label for="buildingType">Building Type: </label>
+    <input type="text" id="buildingType">
+    <br>
+    <label for="location">Location: </label>
+    <input type="text" id="location">
+    <br>
+    <label for="protagName">Protagonist Name: </label>
+    <input type="text" id="protagName">
+    <br>
+    <label for="protagtype">Protagonist Type: </label>
+    <input type="text" id="protagtype">
+    <br>
+    <label for="partnerType">Partner Type: </label>
+    <input type="text" id="partnerType">
+    <br>
+    <label for="partnerName">Partner Name: </label>
+    <input type="text" id="partnerName">
+    <br>
+    <label for="magicitem">Magical item: </label>
+    <input type="text" id="magicitem">
+    <br>
+    <button class="btn btn-success" onclick="generateStory()">Submit</button>
+  </div>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~MEDIUM~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+    <div class="mb-3 storytextarea" id="mediumUserInput">
+        <label for="StoryTextarea1" class="form-label">Chapter 1</label>
+        <textarea class="form-control horrormedium" id="StoryTextarea1" rows="3"></textarea>
+
+        <div class="mb-3">
+            <label for="StoryTextarea2" class="form-label">Chapter 1</label>
+            <textarea class="form-control horrormedium" id="StoryTextarea2" rows="3"></textarea>
+        </div>
+        
+        <div class="mb-3">
+            <label for="StoryTextarea3" class="form-label">Chapter 3</label>
+            <textarea class="form-control horrormedium" id="StoryTextarea3" rows="3"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="StoryTextarea4" class="form-label">Chapter 5</label>
+            <textarea class="form-control horrormedium" id="StoryTextarea4" rows="3"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="StoryTextarea5" class="form-label">Chapter 5</label>
+            <textarea class="form-control horrormedium" id="StoryTextarea5" rows="3"></textarea>
+        </div>
+        
+        <button class="btn btn-success" onclick="submitStory()">Submit</button>
+        
+    </div>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~HARD~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+    <div class="mb-3 storytextarea hidden hardstory" id="hardUserInput">
+        <label for="ChapterTextarea1" class="form-label">Chapter 2</label>
+        <textarea class="form-control hardform" id="ChapterTextarea1" rows="3"></textarea>
+    
+        <label for="ChapterTextarea2" class="form-label">Chapter 4</label>
+        <textarea class="form-control hardform" id="ChapterTextarea2" rows="3"></textarea>
+    
+        <label for="ChapterTextarea3" class="form-label">Chapter 6</label>
+        <textarea class="form-control hardform" id="ChapterTextarea3" rows="3"></textarea>
+    
+        <label for="ChapterTextarea4" class="form-label">Chapter 9</label>
+        <textarea class="form-control hardform" id="ChapterTextarea4" rows="3"></textarea>
+    
+        <label for="ChapterTextarea5" class="form-label">Chapter 10</label>
+        <textarea class="form-control hardform" id="ChapterTextarea5" rows="3"></textarea>
+    
+        <button class="btn btn-success" style="margin-top: 10px;" onclick="submitChapters()">Submit Chapters</button>
+    </div> 
+
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+<script>
+var currentDifficulty = 'Easy';
+
+function changeDifficulty(difficulty) {
+    document.getElementById("StoryTextarea1").value = '';
+    document.getElementById("StoryTextarea2").value = '';
+    document.getElementById("StoryTextarea3").value = '';
+    document.getElementById("StoryTextarea4").value = '';
+    document.getElementById("StoryTextarea5").value = '';
+    document.getElementById("ChapterTextarea1").value = '';
+    document.getElementById("ChapterTextarea2").value = '';
+    document.getElementById("ChapterTextarea3").value = '';
+    document.getElementById("ChapterTextarea4").value = '';
+    document.getElementById("ChapterTextarea5").value = '';
+
+    document.getElementById('storybox2').innerHTML = '';
+
+    currentDifficulty = difficulty;
+    var storyTextElement = document.getElementById('storyText');
+    var showStoryButton = document.getElementById('showStoryButton');
+    var storybox1 = document.getElementById('storybox1');
+    var storybox2 = document.getElementById('storybox2');
+    var userInputDiv = document.getElementById('user-input');
+    var mediumUserInputDiv = document.getElementById('mediumUserInput');
+    var hardUserInputDiv = document.getElementById('hardUserInput'); 
+
+    storyTextElement.textContent = 'Click "Show Story" to see the ' + currentDifficulty +
+        ' story...';
+    showStoryButton.style.display = 'block';
+    showStoryButton.classList.remove('btn-easy', 'btn-medium', 'btn-hard');
+    showStoryButton.classList.add('btn-' + currentDifficulty.toLowerCase());
+
+    storybox1.style.marginLeft = '15px';
+    storybox1.style.maxWidth = '100vw';
+
+    storybox2.style.display = 'none';
+    userInputDiv.style.display = 'none';
+    mediumUserInputDiv.style.display = 'none';
+    hardUserInputDiv.style.display = 'none'; 
+}
+
+    if (currentDifficulty.toLowerCase() === 'easy') {
+        userInputDiv.style.display = 'block';
+    } else if (currentDifficulty.toLowerCase() === 'medium') {
+        mediumUserInputDiv.style.display = 'block';
+    } else if (currentDifficulty.toLowerCase() === 'hard') {
+        hardUserInputDiv.style.display = 'block';
+    }
+
+
+    function showStory() {
+    var storyTextElement = document.getElementById('storyText');
+    var showStoryButton = document.getElementById('showStoryButton');
+    var storybox1 = document.getElementById('storybox1');
+    var storybox2 = document.getElementById('storybox2');
+    var userInputDiv = document.getElementById('user-input');
+    var mediumUserInputDiv = document.getElementById('mediumUserInput');
+    var hardUserInputDiv = document.getElementById('hardUserInput');
+
+
+    document.getElementById("buildingType").value || '';
+    document.getElementById("location").value || '';
+    document.getElementById("protagName").value || '';
+    document.getElementById("protagtype").value || '';
+    document.getElementById("partnerType").value || '';
+    document.getElementById("partnerName").value || '';   
+    document.getElementById("magicitem").value || '';
+
+    if (currentDifficulty.toLowerCase() === 'medium') {
+        mediumUserInputDiv.style.display = 'block';
+    } else if (currentDifficulty.toLowerCase() === 'hard') {
+        hardUserInputDiv.style.display = 'block';
+    } else {
+        mediumUserInputDiv.style.display = 'none';
+        hardUserInputDiv.style.display = 'none';
+    }
+
+    fetch('/fantasy/GenreF/Fstory_' + currentDifficulty.toLowerCase() + '.html')
+        .then(response => response.text())
+        .then(data => {
+            storyTextElement.innerHTML = data;
+            showStoryButton.classList.add('btn-' + currentDifficulty.toLowerCase());
+
+            storybox1.style.marginLeft = '85px';
+            storybox1.style.maxWidth = '700px';
+
+            storybox2.style.display = 'block';
+
+            if (currentDifficulty.toLowerCase() === 'easy') {
+                userInputDiv.style.display = 'block';
+            } else {
+                userInputDiv.style.display = 'none';
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching story:', error);
+            storyTextElement.innerHTML = 'Error fetching the story.';
+        });
+}
+
+
+
+function changeText(difficulty) {
+    var difficultyTextElement = document.getElementById('difficultyText');
+    var userInputDiv = document.getElementById('user-input');
+    var mediumUserInputDiv = document.getElementById('mediumUserInput');
+
+    difficultyTextElement.textContent = 'You selected ' + difficulty + ' difficulty.';
+    difficultyTextElement.classList.add('centered-text');
+
+    userInputDiv.style.display = 'none';
+    mediumUserInputDiv.style.display = 'none';
+}
+
+function generateStory(userInput) {
+    const buildingType = document.getElementById("buildingType").value || '________';
+    const location = document.getElementById("location").value || '________';
+    const protagName = document.getElementById("protagName").value || '________';
+    const protagtype = document.getElementById("protagtype").value || '________';
+    const partnerType = document.getElementById("partnerType").value || '________';
+    const partnerName = document.getElementById("partnerName").value || '________';
+    const magicitem = document.getElementById("magicitem").value || '________';
+
+    const storyContainer = document.getElementById("storybox2");
+
+    const newStory = document.createElement("div");
+    newStory.classList.add("story");
+
+    newStory.innerHTML = `
+    ${currentDifficulty.toLowerCase() === 'easy' ?`
+    <h2 class="Easytitle">Chronicles of the Lost Realm</h2>
+            <p class="main-paragraph">
+                <h6>Chapter 1: The Enchanted ${buildingType}</h6> 
+                    The old ${buildingType} stood alone on the outskirts of ${location}, its dilapidated façade looming like a spectral presence against the moonlit sky. 
+                    Locals whispered of its enchanted history, the tales passing through generations like a mythical inheritance. 
+                    ${protagName}, a curious ${protagtype}, alongside their trusty ${partnerType} companion, ${partnerName}, 
+                    decided to spend a night within its ancient walls to uncover the mysteries that clung to the air like a magical perfume.
+                    As ${protagName} and ${partnerName} explored the ${buildingType}'s desolate halls, a chill crept through the air, freezing the marrow in their bones. 
+                    Shadows danced on the walls, morphing into ethereal figures that seemed to be watching, waiting. The creaking floorboards beneath ${protagName}'s footsteps echoed like distant incantations, 
+                    and the oppressive silence was shattered by occasional, inexplicable whispers that echoed through the abandoned rooms.
+            </p>
+
+            <br>
+            <br>
+
+            <p class="main-paragraph">
+                <h6>Chapter 2: The Whispering Realms</h6> 
+                    As midnight approached, an otherworldly presence gripped ${protagName}. Unseen hands seemed to pull them deeper into the ${buildingType}'s heart, 
+                    where a long-forgotten secret awaited revelation. In the pitch-black darkness, a radiant figure materialized, its luminous eyes locking with ${protagName}'s. 
+                    The air grew thick with benevolence, and the walls seemed to expand. ${protagName}'s heart raced as a melodic voice whispered the long-lost truth, unveiling a destiny within the enchanted confines of the ${buildingType}.
+            </p>
+
+            <br>
+            <br>
+
+            <p class="main-paragraph">
+                <h6>Chapter 3: The Mystical Revelation</h6> 
+                    In the heart of the ${buildingType}, a portal to a mystical realm emerged.
+                    ${protagName} and ${partnerName}, guided by the benevolent apparition, crossed the threshold into a dimension beyond imagination. 
+                    The air was charged with serene energy, and the landscape was an ever-shifting tapestry of vibrant colors.
+                    In this fantastical realm, they encountered mythical creatures that whispered secrets of ancient prophecies. 
+                    The ${buildingType}'s enchantment was revealed to be a consequence of a long-forgotten spell that sought to protect the realm. 
+                    To restore harmony, ${protagName} and ${partnerName} needed to embark on a quest through the realms of light, wisdom, courage, and serenity, collecting  ${magicitem} of immense power.
+            </p>
+
+            <br>
+            <br>
+
+            <p class="main-paragraph">
+                <h6>Chapter 4: The Harmonious Restoration</h6> 
+                    Their journey led them through illuminated forests, across soaring peaks, and into the depths of a tranquil lake. Along the way, ${protagName} honed their magical abilities, and ${partnerName}'s presence emanated with newfound radiance. 
+                    The mythical entities that once guarded the ${buildingType} now guided them on their quest.
+                    As they reached the final realm, a colossal guardian of harmony awaited them. The air resonated with serenity as ${protagName} and ${partnerName} channeled their accumulated energy, 
+                    unleashing a harmonious wave that dispelled the enchantment's imbalance. The ${buildingType} transformed, its ancient walls now aglow with revitalized magic.
+                    Returning to the material realm, ${protagName} and ${partnerName} witnessed the ${buildingType}'s restoration. The dilapidated walls now radiated with vibrant energy, 
+                    and the haunting echoes transformed into joyous melodies that filled the starlit sky. The ${buildingType}, 
+                    no longer a symbol of neglect, stood as a testament to the enduring magic of the realm and the courage of those willing to embrace its harmonious destiny.
+            </p>
+    ` : ''}
+
+    
+    ${currentDifficulty.toLowerCase() === 'medium' ?`
+    <h2 class="Easytitle">The Nexus Prophecy: Aric's Awakening</h2>
+    <h5 class="original-story-text">
+        <h6>Chapter 1: The Enchanted Forest</h6> 
+            The ancient forest stood tall and imposing, its canopy casting dappled shadows on the moss-covered ground. Aric, an intrepid adventurer, 
+            felt an inexplicable pull toward the heart of the woodland, where legends spoke of a hidden sanctuary. Armed with a map and accompanied by a companion, 
+            a creature with fur as dark as the night, Aric embarked on a quest to unravel the mysteries concealed within the ancient trees.
+            As Aric and their loyal companion delved deeper into the forest, a hushed silence enveloped the surroundings. ${userInput1} Aric noticed peculiar markings on the trees, 
+            as if nature itself whispered secrets only the worthy could comprehend.  ${userInput2}.
+        <br>
+        <br>
+        <h6>Chapter 2: The Hidden Sanctuary</h6> 
+            At the heart of the forest, Aric and their companion discovered the fabled sanctuary, a place of ancient power and untold wonders. 
+            The air hummed with magic, and the ground beneath their feet felt charged with energy. Aric approached an intricately carved entrance, revealing a passage into the sanctuary's depths.
+            Inside, the walls adorned with mystic symbols told tales of a bygone era. Aric's senses tingled with the potency of the place. 
+            In the central chamber, a pedestal cradled a mysterious artifact—the legendary Enchanter's Amulet. As Aric reached out to grasp it, a distant rumble echoed through the sanctuary, 
+            and the once-illuminated chamber plunged into darkness.
+        <br>
+        <br>
+        <h6>Chapter 3: The Enchanter's Amulet</h6> 
+            With the Enchanter's Amulet in hand, Aric felt its pulsating energy resonate with a hidden power. 
+            The darkness in the chamber began to recede, revealing a concealed passage leading to an underground catacomb. Aric and their companion descended into the depths, guided by the essence of the Enchanter's Amulet.
+            In the subterranean catacomb, ancient guardians awoke from their slumber, their eyes gleaming with an otherworldly light.  ${userInput3}.
+        <br>
+        <br>
+        <h6>Chapter 4: The Prophecy</h6> 
+            As Aric delved deeper, they discovered the Nexus Chamber—a hidden chamber where the energies of the sanctuary and the catacomb converged. 
+            The Enchanter's Amulet hummed in resonance, projecting visions of a forgotten prophecy onto the chamber walls. Aric now stood at the crossroads of destiny, tasked with a choice that would shape the fate of the ancient sanctuary.
+            In this pivotal moment, Aric faced a moral dilemma that echoed through the ages. The Enchanter's Amulet awaited activation, and the guardians observed with silent anticipation. 
+            Aric's decision would either restore harmony to the sanctuary or unleash an unforeseen cataclysm. The echoes of the Nexus Chamber whispered their secrets, leaving Aric to determine the course of their perilous journey.
+        <br>
+        <br>
+        <h6>Chapter 5: The Fate of the Sanctuary</h6> 
+            ${userInput4} and now with the choice made, the Enchanter's Amulet's power surged, illuminating the Nexus Chamber with a radiant glow. 
+            Aric witnessed the ancient sanctuary respond, its life force intertwined with the adventurer's decision. The guardians, satisfied or angered by the outcome, returned to their dormant state.
+            As Aric emerged from the sanctuary with the activated Enchanter's Amulet, the forest seemed to sigh with relief. 
+            The sanctuary's fate was sealed, and the ancient woodland reclaimed its tranquil ambiance. Aric and their companion left the enchanted forest, 
+            the echoes of their journey bound to the tales whispered through generations—the story of an adventurer who stood at the crossroads of ancient magic and chose  ${userInput5}.
+        <br>
+        <br>
+    </h5>
+    ` : ''}
+    `;
+
+    storyContainer.innerHTML = '';
+    storyContainer.appendChild(newStory);
+    storyContainer.classList.remove("hidden");
+}
+
+function submitStory() {
+    const userInput1 = document.getElementById("StoryTextarea1").value || '__________';
+    const userInput2 = document.getElementById("StoryTextarea2").value || '__________';
+    const userInput3 = document.getElementById("StoryTextarea3").value || '__________';
+    const userInput4 = document.getElementById("StoryTextarea4").value || '__________';
+    const userInput5 = document.getElementById("StoryTextarea5").value || '__________';
+
+    const storyContainer = document.getElementById("storybox2");
+
+    const newStory = document.createElement("div");
+    newStory.classList.add("story");
+
+    newStory.innerHTML = `
+    <h2 class="Easytitle">The Nexus Prophecy: Aric's Awakening</h2>
+    <h5 class="original-story-text">
+        <h6>Chapter 1: The Enchanted Forest</h6> 
+            The ancient forest stood tall and imposing, its canopy casting dappled shadows on the moss-covered ground. Aric, an intrepid adventurer, 
+            felt an inexplicable pull toward the heart of the woodland, where legends spoke of a hidden sanctuary. Armed with a map and accompanied by a companion, 
+            a creature with fur as dark as the night, Aric embarked on a quest to unravel the mysteries concealed within the ancient trees.
+            As Aric and their loyal companion delved deeper into the forest, a hushed silence enveloped the surroundings. ${userInput1} Aric noticed peculiar markings on the trees, 
+            as if nature itself whispered secrets only the worthy could comprehend.  ${userInput2}.
+        <br>
+        <br>
+        <h6>Chapter 2: The Hidden Sanctuary</h6> 
+            At the heart of the forest, Aric and their companion discovered the fabled sanctuary, a place of ancient power and untold wonders. 
+            The air hummed with magic, and the ground beneath their feet felt charged with energy. Aric approached an intricately carved entrance, revealing a passage into the sanctuary's depths.
+            Inside, the walls adorned with mystic symbols told tales of a bygone era. Aric's senses tingled with the potency of the place. 
+            In the central chamber, a pedestal cradled a mysterious artifact—the legendary Enchanter's Amulet. As Aric reached out to grasp it, a distant rumble echoed through the sanctuary, 
+            and the once-illuminated chamber plunged into darkness.
+        <br>
+        <br>
+        <h6>Chapter 3: The Enchanter's Amulet</h6> 
+            With the Enchanter's Amulet in hand, Aric felt its pulsating energy resonate with a hidden power. 
+            The darkness in the chamber began to recede, revealing a concealed passage leading to an underground catacomb. Aric and their companion descended into the depths, guided by the essence of the Enchanter's Amulet.
+            In the subterranean catacomb, ancient guardians awoke from their slumber, their eyes gleaming with an otherworldly light.  ${userInput3}.
+        <br>
+        <br>
+        <h6>Chapter 4: The Prophecy</h6> 
+            As Aric delved deeper, they discovered the Nexus Chamber—a hidden chamber where the energies of the sanctuary and the catacomb converged. 
+            The Enchanter's Amulet hummed in resonance, projecting visions of a forgotten prophecy onto the chamber walls. Aric now stood at the crossroads of destiny, tasked with a choice that would shape the fate of the ancient sanctuary.
+            In this pivotal moment, Aric faced a moral dilemma that echoed through the ages. The Enchanter's Amulet awaited activation, and the guardians observed with silent anticipation. 
+            Aric's decision would either restore harmony to the sanctuary or unleash an unforeseen cataclysm. The echoes of the Nexus Chamber whispered their secrets, leaving Aric to determine the course of their perilous journey.
+        <br>
+        <br>
+        <h6>Chapter 5: The Fate of the Sanctuary</h6> 
+            ${userInput4} and now with the choice made, the Enchanter's Amulet's power surged, illuminating the Nexus Chamber with a radiant glow. 
+            Aric witnessed the ancient sanctuary respond, its life force intertwined with the adventurer's decision. The guardians, satisfied or angered by the outcome, returned to their dormant state.
+            As Aric emerged from the sanctuary with the activated Enchanter's Amulet, the forest seemed to sigh with relief. 
+            The sanctuary's fate was sealed, and the ancient woodland reclaimed its tranquil ambiance. Aric and their companion left the enchanted forest, 
+            the echoes of their journey bound to the tales whispered through generations—the story of an adventurer who stood at the crossroads of ancient magic and chose  ${userInput5}.
+        <br>
+        <br>
+    </h5>
+    `;
+
+    
+
+    storyContainer.innerHTML = '';
+    storyContainer.appendChild(newStory);
+
+    storyContainer.classList.remove("hidden");
+}
+
+function submitChapters() {
+    const chapter1 = document.getElementById("ChapterTextarea1").value || '__________';
+    const chapter2 = document.getElementById("ChapterTextarea2").value || '__________';
+    const chapter3 = document.getElementById("ChapterTextarea3").value || '__________';
+    const chapter4 = document.getElementById("ChapterTextarea4").value || '__________';
+    const chapter5 = document.getElementById("ChapterTextarea5").value || '__________';
+
+    const storyContainer = document.getElementById("storybox2");
+
+    const newStory = document.createElement("div");
+    newStory.classList.add("story");
+
+    newStory.innerHTML = `
+    ${currentDifficulty.toLowerCase() === 'hard' ?`
+        <h2 class="Hardtitle">The Celestial Navigator</h2>
+        <p class="main-paragraph">
+            <h6>Chapter 1: The Celestial Navigator</h6> 
+                In the vast expanse of the Galactic Nexus, where stars weaved patterns across the cosmic canvas, 
+                a young astronomer named Seraphina discovered an ancient star chart buried within the archives of the Astral Academy. 
+                This celestial map held the key to unlocking the secrets of intergalactic travel, a lost art known only to a few wise beings scattered across the galaxies.
+                With newfound determination, Seraphina embarked on a quest to find the elusive Celestial Navigator, 
+                a legendary being said to possess the knowledge needed to traverse the cosmic currents. Her journey took her to distant planets and alien civilizations, each with its unique wonders and challenges.
+            <br>
+            <br>
+        </p>
+
+        <p class="main-paragraph">
+            <h6>Chapter 2: The Nexus Prophecy</h6> 
+                ${chapter1}.
+            <br>
+            <br>
+        </p>
+
+        <p class="main-paragraph"> 
+            <h6>Chapter 3: The Cosmic Tapestry</h6> 
+            As Seraphina delved deeper into the mysteries of the intergalactic currents, 
+            she discovered the existence of the Cosmic Tapestry, a weave of energy connecting all galaxies. 
+            The tapestry held the memories of ancient civilizations and the echoes of cosmic events that shaped the universe.
+            Guided by the Starweaver fragments, Seraphina learned to read the tapestry and harness its power. Each revelation brought her closer to unlocking the secrets of intergalactic travel, 
+            and her connection to the cosmic energies grew stronger with every passing celestial alignment.
+            <br>
+            <br>
+        </p>
+
+        <p class="main-paragraph">
+            <h6>Chapter 4: The Void Serpent</h6> 
+                ${chapter2}.
+                In the climax of the confrontation, Seraphina harnessed the power of the Nexus Key and banished the Void Serpent into the cosmic abyss. 
+                The victory echoed through the galaxies, restoring harmony to the Galactic Nexus and fulfilling the prophecy.
+            <br>
+            <br>
+        </p>
+
+        <p class="main-paragraph">
+            <h6>Chapter 5: The Galactic Convergence</h6> 
+                With the threat of the Void Serpent extinguished, Seraphina stood at the nexus of galaxies, holding the fully assembled Nexus Key. 
+                The celestial energies surged around her, and the gates between galaxies opened, revealing a breathtaking panorama of cosmic wonders.
+                As she stepped through the portal, Seraphina embraced her role as the Celestial Navigator, destined to explore the uncharted realms beyond the Galactic Nexus. 
+                Her journey became a tale woven into the fabric of the Cosmic Tapestry, inspiring future travelers to venture into the intergalactic unknown and discover the wonders that awaited them in the vast cosmic expanse.
+            <br>
+            <br>
+        </p>
+
+        <p class="main-paragraph">
+            <h6>Chapter 6: The Cosmic Nexus</h6> 
+            Stepping through the intergalactic portal, Seraphina found herself in the heart of the Cosmic Nexus, a dimension where the boundaries between galaxies blurred into a kaleidoscope of colors. 
+            ${chapter3}. 
+            <br>
+            <br>
+        </p>
+
+        <p class="main-paragraph">
+            <h6>Chapter 7: The Luminous Spheres</h6> 
+                On her journey through the Cosmic Nexus, Seraphina encountered the Luminous Spheres, celestial entities that held the wisdom of eons within their radiant cores.
+                These cosmic beings imparted profound knowledge about the balance of cosmic forces and the interconnectedness of galaxies. In exchange for their teachings, 
+                Seraphina helped the Luminous Spheres mend the fractures in the fabric of the Nexus, solidifying her role as the Celestial Navigator.
+             <br>
+            <br>
+        </p>
+
+        <p class="main-paragraph">
+            <h6>Chapter 8: The Quantum Starfarers</h6> 
+                In a distant corner of the Cosmic Nexus, Seraphina discovered a society of advanced beings known as the Quantum Starfarers. Masters of interdimensional travel, 
+                they shared their expertise in manipulating quantum energies to traverse the vast expanses of the multiverse. Collaborating with these enigmatic beings, 
+                Seraphina expanded her understanding of cosmic navigation, integrating quantum principles into her celestial repertoire.
+            <br>
+            <br>
+        </p>
+
+        <p class="main-paragraph">
+            <h6>Chapter 9: The Astral Council</h6> 
+            As word of Seraphina's intergalactic odyssey spread, representatives from distant galaxies convened at the Astral Council. ${chapter4}.
+            The council recognized her as the Celestial Navigator and bestowed upon her the Cosmic Codex, 
+            a sacred tome containing the collective wisdom of the galactic alliance.
+            Seraphina, now a symbol of unity, forged alliances with civilizations from myriad galaxies, creating a coalition dedicated to maintaining cosmic harmony.  
+            <br>
+            <br>
+        </p>
+
+        <p class="main-paragraph">
+            <h6>Chapter 10: The Ascendance</h6> 
+            Guided by the teachings of the Luminous Spheres, the knowledge of the Quantum Starfarers, and the wisdom of the Astral Council, Seraphina ascended to a higher plane of existence. 
+            Transcending the limitations of mortal form, she became a beacon of cosmic enlightenment. In her elevated state, Seraphina ${chapter5}.
+            <br>
+        </p>
+
+    ` : ''}
+    `;
+
+    storyContainer.innerHTML = '';
+    storyContainer.appendChild(newStory);
+    storyContainer.classList.remove("hidden");
+}
+
+
+</script>
+
+<!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+
+</body>
+</html>
